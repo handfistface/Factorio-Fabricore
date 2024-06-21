@@ -2,7 +2,7 @@
   "profiles": {
     "Fabricore.Generator.Console": {
       "commandName": "Project",
-      "commandLineArgs": "C:\\Users\\John\\AppData\\Roaming\\Factorio\\mods\\fabri-core\\locale\\en\\strings.cfg iron_ore"
+      "commandLineArgs": "reorder C:\\Users\\John\\AppData\\Roaming\\Factorio\\mods\\fabri-core\\locale\\en\\strings.cfg iron_ore"
     }
   }
 }

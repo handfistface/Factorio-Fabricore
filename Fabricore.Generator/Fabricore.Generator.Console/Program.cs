@@ -6,27 +6,75 @@ using System.Windows.Forms;
 /// <summary>
 ///     Reads in the cfg file, and then generates the lua code for displaying it
 ///     Finally, it puts that lua code in the system clipboard for copying
-///     arg[0]: the path to the cfg
-///     arg[1]: the tag to read in, such as "iron_ore"
+///     arg[0]: the command to run, "lua" or "reorder"
+///     arg[1]: the path to the cfg
+///     arg[2]: the tag to read in, such as "iron_ore"
 /// </summary>
 internal class Program
 {
+    private static IFileManipulator _fileManipulator;
+    private static string _entireFileContents;
+
     [STAThread]
     private static void Main(string[] args)
     {
-        var toRead = new FileInfo(args[0]);     //path to the file to read in
-        var tagToFind = args[1];        //this should just be something like "copper_ore"
+        _fileManipulator = new FileManipulator();
+
+        var command = args[0].ToLower();      //can be lua or reorder
+        var toRead = new FileInfo(args[1]);     //path to the file to read in
+        var tagToFind = args[2];        //this should just be something like "copper_ore"
 
         //read in the file and get only the tag we're interested in
         var tagSnippet = GetTagSnippet(toRead, $"[{tagToFind}]");
 
-        //generate the lua based off the tag we've just retrieved
-        var luaCode = GenerateLua(tagSnippet, tagToFind);
-
-        Clipboard.SetText(luaCode);
-        Console.Out.WriteLine("Copied lua code to clipboard");
+        if (command == "lua")
+        {
+            //generate the lua based off the tag we've just retrieved
+            var luaCode = GenerateLua(tagSnippet, tagToFind);
+            Clipboard.SetText(luaCode);
+            Console.Out.WriteLine("Copied lua code to clipboard");
+        }
+        else if (command == "reorder")
+        {
+            //regenerate the text & labels in the cfg file
+            var newTagSnippet = ReorderCfg(tagSnippet, tagToFind);
+            var replacedFileContents = _entireFileContents.Replace(tagSnippet, newTagSnippet);
+            _fileManipulator.WriteFile(toRead, replacedFileContents);
+            Console.Out.WriteLine("Updated file with new reformatted tag");
+        }
     }
 
+    private static string ReorderCfg(string tagSnippet, string tagName)
+    {
+        var lines = tagSnippet.Split("\r\n", StringSplitOptions.RemoveEmptyEntries);
+        int textCount = 1;
+        int labelCount = 1;
+        var newLines = $"[{tagName}]\r\n";
+        foreach (var line in lines)
+        {
+            //pull out text or label identifier
+            var textMatch = Regex.Match(line, @"text\d*=");
+            if (textMatch.Success)
+            {
+                newLines += $"text{textCount++}={line.Substring(textMatch.Value.Length)}\r\n";
+            }
+            var labelMatch = Regex.Match(line, @"label\d*=");
+            if (labelMatch.Success)
+            {
+                newLines += $"\r\nlabel{labelCount++}={line.Substring(labelMatch.Value.Length)}\r\n";
+            }
+        }
+
+        newLines += "\r\n";
+        return newLines;
+    }
+
+    /// <summary>
+    ///     Generates the lua code
+    /// </summary>
+    /// <param name="tagSnippet">String of the tag, including the name such as [iron_ore]</param>
+    /// <param name="tagName"></param>
+    /// <returns></returns>
     private static string GenerateLua(string tagSnippet, string tagName)
     {
         //we go line by line, so split on new line
@@ -56,11 +104,10 @@ internal class Program
     private static string GetTagSnippet(FileInfo toRead, string tagToFind)
     {
         //read in the file
-        var fileManipulator = new FileManipulator();
-        var fileContents = fileManipulator.ReadFile(toRead);
+        _entireFileContents = _fileManipulator.ReadFile(toRead);
 
         //get the line where the tag lives
-        fileContents = fileContents.Substring(fileContents.IndexOf(tagToFind));
+        var fileContents = _entireFileContents.Substring(_entireFileContents.IndexOf(tagToFind));
 
         //skip to the next line
         var skipContents = fileContents.Replace(tagToFind, "");

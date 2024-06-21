@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fabricore.Generator.Console", "Fabricore.Generator.Console\Fabricore.Generator.Console.csproj", "{1090154A-58EB-4649-A3F2-3C4D37C82F18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fabricore.Generator.Console", "Fabricore.Generator.Console\Fabricore.Generator.Console.csproj", "{1090154A-58EB-4649-A3F2-3C4D37C82F18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{40B2A00B-60CF-449B-9341-1FE5AC9ABF1D}"
+	ProjectSection(SolutionItems) = preProject
+		..\readme.md = ..\readme.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -20,7 +20,8 @@ function fabricore_menu(player_index)
     conveyor_belts = 1,
     inserters = 1,
     oil_tanks = 1,
-    pipes = 1
+    pipes = 1,
+    pumps = 1
   }
 end
 
@@ -37,36 +38,35 @@ function fabricore_page_content(page_name, player_index, element)
 
   if page_name == "iron_ore" then
     element.add { type = "label", caption = { "iron_ore.text1" } }
-    element.add { type = "label", caption = { "iron_ore.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "iron_ore.label1" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "iron_ore.text2" } }
-    element.add { type = "label", caption = { "iron_ore.label3" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "iron_ore.label2" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "iron_ore.text3" } }
-    element.add { type = "label", caption = { "iron_ore.label4" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "iron_ore.label3" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "iron_ore.text4" } }
-    element.add { type = "label", caption = { "iron_ore.label5" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "iron_ore.label4" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "iron_ore.text5" } }
     element.add { type = "label", caption = { "iron_ore.text6" } }
     element.add { type = "label", caption = { "iron_ore.text7" } }
     element.add { type = "label", caption = { "iron_ore.text8" } }
-    element.add { type = "label", caption = { "iron_ore.label9" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "iron_ore.label5" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "iron_ore.text9" } }
     element.add { type = "label", caption = { "iron_ore.text10" } }
   end
 
-
   if page_name == "copper_ore" then
     element.add { type = "label", caption = { "copper_ore.text1" } }
-    element.add { type = "label", caption = { "copper_ore.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "copper_ore.label1" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "copper_ore.text2" } }
-    element.add { type = "label", caption = { "copper_ore.label3" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "copper_ore.label2" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "copper_ore.text3" } }
-    element.add { type = "label", caption = { "copper_ore.label4" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "copper_ore.label3" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "copper_ore.text4" } }
-    element.add { type = "label", caption = { "copper_ore.label5" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "copper_ore.label4" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "copper_ore.text5" } }
-    element.add { type = "label", caption = { "copper_ore.label6" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "copper_ore.label5" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "copper_ore.text6" } }
-    element.add { type = "label", caption = { "copper_ore.label7" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "copper_ore.label6" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "copper_ore.text7" } }
     element.add { type = "label", caption = { "copper_ore.text8" } }
     element.add { type = "label", caption = { "copper_ore.text9" } }
@@ -76,34 +76,34 @@ function fabricore_page_content(page_name, player_index, element)
 
   if page_name == "coal" then
     element.add { type = "label", caption = { "coal.text1" } }
-    element.add { type = "label", caption = { "coal.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "coal.label1" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "coal.text2" } }
-    element.add { type = "label", caption = { "coal.label3" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "coal.label2" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "coal.text3" } }
-    element.add { type = "label", caption = { "coal.label4" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "coal.label3" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "coal.text4" } }
-    element.add { type = "label", caption = { "coal.label5" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "coal.label4" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "coal.text5" } }
-    element.add { type = "label", caption = { "coal.label6" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "coal.label5" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "coal.text6" } }
-    element.add { type = "label", caption = { "coal.label7" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "coal.label6" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "coal.text7" } }
-    element.add { type = "label", caption = { "coal.label8" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "coal.label7" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "coal.text8" } }
     element.add { type = "label", caption = { "coal.text9" } }
     element.add { type = "label", caption = { "coal.text10" } }
-    element.add { type = "label", caption = { "coal.label9" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "coal.label8" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "coal.text11" } }
     element.add { type = "label", caption = { "coal.text12" } }
     element.add { type = "label", caption = { "coal.text13" } }
-    element.add { type = "label", caption = { "coal.label10" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "coal.label9" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "coal.text14" } }
     element.add { type = "label", caption = { "coal.text15" } }
     element.add { type = "label", caption = { "coal.text16" } }
-    element.add { type = "label", caption = { "coal.label11" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "coal.label10" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "coal.text17" } }
     element.add { type = "label", caption = { "coal.text18" } }
-  end
+  end  
 
   if page_name == "trees" then
     element.add { type = "label", caption = { "trees.text1" } }
@@ -235,4 +235,30 @@ function fabricore_page_content(page_name, player_index, element)
     element.add { type = "label", caption = { "pipes.text11" } }
     element.add { type = "label", caption = { "pipes.text12" } }
   end
+
+  if page_name == "pumps" then
+    element.add { type = "label", caption = { "pumps.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "pumps.text1" } }
+    element.add { type = "label", caption = { "pumps.text2" } }
+    element.add { type = "label", caption = { "pumps.text3" } }
+    element.add { type = "label", caption = { "pumps.text4" } }
+    element.add { type = "label", caption = { "pumps.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "pumps.text5" } }
+    element.add { type = "label", caption = { "pumps.text6" } }
+    element.add { type = "label", caption = { "pumps.text7" } }
+    element.add { type = "label", caption = { "pumps.text8" } }
+    element.add { type = "label", caption = { "pumps.label3" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "pumps.text9" } }
+    element.add { type = "label", caption = { "pumps.text10" } }
+    element.add { type = "label", caption = { "pumps.label4" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "pumps.text11" } }
+    element.add { type = "label", caption = { "pumps.text12" } }
+    element.add { type = "label", caption = { "pumps.text13" } }
+    element.add { type = "label", caption = { "pumps.text14" } }
+    element.add { type = "label", caption = { "pumps.text15" } }
+    element.add { type = "label", caption = { "pumps.text16" } }
+    element.add { type = "label", caption = { "pumps.text17" } }
+    element.add { type = "label", caption = { "pumps.text18" } }
+  end
+
 end

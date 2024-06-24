@@ -41,6 +41,11 @@ internal class Program
             var replacedFileContents = _entireFileContents.Replace(tagSnippet, newTagSnippet);
             _fileManipulator.WriteFile(toRead, replacedFileContents);
             Console.Out.WriteLine("Updated file with new reformatted tag");
+
+            //generate and copy the lua code to the clipboard
+            var luaCode = GenerateLua(newTagSnippet, tagToFind);
+            Clipboard.SetText(luaCode);
+            Console.Out.WriteLine("Copied lua code to clipboard");
         }
     }
 

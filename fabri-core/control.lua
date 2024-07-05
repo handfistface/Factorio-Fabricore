@@ -56,8 +56,18 @@ function fabricore_menu(player_index)
       sulfuric_acid = 1,
       petroleum_gas = 1,
       light_oil = 1,
-      heavy_oil = 1
-    }
+      heavy_oil = 1,
+      coal_liquification = 1,
+      heavy_oil_cracking = 1,
+      solid_fuel = 1,
+      lubricant = 1,
+      plastic = 1
+    },
+    steel = 1,
+    sulfur = 1,
+    battery = 1,
+    explosives = 1,
+    uranium = 1
   }
 end
 
@@ -1211,6 +1221,465 @@ function fabricore_page_content(page_name, player_index, element)
     element.add { type = "label", caption = { "heavy_oil.text60" } }
     element.add { type = "label", caption = { "heavy_oil.text61" } }
     element.add { type = "label", caption = { "heavy_oil.text62" } }
+  end
+  
+  if page_name == "coal_liquification" then
+    element.add { type = "label", caption = { "coal_liquification.text1" } }
+    element.add { type = "label", caption = { "coal_liquification.text2" } }
+    element.add { type = "label", caption = { "coal_liquification.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "coal_liquification.text3" } }
+    element.add { type = "label", caption = { "coal_liquification.text4" } }
+    element.add { type = "label", caption = { "coal_liquification.text5" } }
+    element.add { type = "label", caption = { "coal_liquification.text6" } }
+    element.add { type = "label", caption = { "coal_liquification.text7" } }
+    element.add { type = "label", caption = { "coal_liquification.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "coal_liquification.text8" } }
+    element.add { type = "label", caption = { "coal_liquification.text9" } }
+    element.add { type = "label", caption = { "coal_liquification.text10" } }
+    element.add { type = "label", caption = { "coal_liquification.text11" } }
+    element.add { type = "label", caption = { "coal_liquification.text12" } }
+    element.add { type = "label", caption = { "coal_liquification.text13" } }
+    element.add { type = "label", caption = { "coal_liquification.text14" } }
+    element.add { type = "label", caption = { "coal_liquification.text15" } }
+    element.add { type = "label", caption = { "coal_liquification.text16" } }
+    element.add { type = "label", caption = { "coal_liquification.text17" } }
+    element.add { type = "label", caption = { "coal_liquification.text18" } }
+    element.add { type = "label", caption = { "coal_liquification.text19" } }
+    element.add { type = "label", caption = { "coal_liquification.text20" } }
+    element.add { type = "label", caption = { "coal_liquification.text21" } }
+    element.add { type = "label", caption = { "coal_liquification.text22" } }
+    element.add { type = "label", caption = { "coal_liquification.text23" } }
+    element.add { type = "label", caption = { "coal_liquification.text24" } }
+    element.add { type = "label", caption = { "coal_liquification.text25" } }
+    element.add { type = "label", caption = { "coal_liquification.text26" } }
+    element.add { type = "label", caption = { "coal_liquification.text27" } }
+    element.add { type = "label", caption = { "coal_liquification.text28" } }
+    element.add { type = "label", caption = { "coal_liquification.text29" } }
+    element.add { type = "label", caption = { "coal_liquification.text30" } }
+    element.add { type = "label", caption = { "coal_liquification.text31" } }
+    element.add { type = "label", caption = { "coal_liquification.text32" } }
+    element.add { type = "label", caption = { "coal_liquification.text33" } }
+    element.add { type = "label", caption = { "coal_liquification.text34" } }
+    element.add { type = "label", caption = { "coal_liquification.text35" } }
+    element.add { type = "label", caption = { "coal_liquification.text36" } }
+    element.add { type = "label", caption = { "coal_liquification.text37" } }
+    element.add { type = "label", caption = { "coal_liquification.text38" } }
+    element.add { type = "label", caption = { "coal_liquification.text39" } }
+    element.add { type = "label", caption = { "coal_liquification.text40" } }
+    element.add { type = "label", caption = { "coal_liquification.text41" } }
+    element.add { type = "label", caption = { "coal_liquification.text42" } }
+    element.add { type = "label", caption = { "coal_liquification.text43" } }
+    element.add { type = "label", caption = { "coal_liquification.label3" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "coal_liquification.text44" } }
+    element.add { type = "label", caption = { "coal_liquification.text45" } }
+    element.add { type = "label", caption = { "coal_liquification.text46" } }
+    element.add { type = "label", caption = { "coal_liquification.text47" } }
+    element.add { type = "label", caption = { "coal_liquification.text48" } }
+    element.add { type = "label", caption = { "coal_liquification.text49" } }
+    element.add { type = "label", caption = { "coal_liquification.text50" } }
+    element.add { type = "label", caption = { "coal_liquification.text51" } }
+    element.add { type = "label", caption = { "coal_liquification.text52" } }
+    element.add { type = "label", caption = { "coal_liquification.text53" } }
+    element.add { type = "label", caption = { "coal_liquification.text54" } }
+    element.add { type = "label", caption = { "coal_liquification.text55" } }
+    element.add { type = "label", caption = { "coal_liquification.text56" } }
+    element.add { type = "label", caption = { "coal_liquification.text57" } }
+    element.add { type = "label", caption = { "coal_liquification.text58" } }
+    element.add { type = "label", caption = { "coal_liquification.text59" } }
+    element.add { type = "label", caption = { "coal_liquification.text60" } }
+    element.add { type = "label", caption = { "coal_liquification.text61" } }
+    element.add { type = "label", caption = { "coal_liquification.text62" } }
+    element.add { type = "label", caption = { "coal_liquification.text63" } }
+    element.add { type = "label", caption = { "coal_liquification.text64" } }
+    element.add { type = "label", caption = { "coal_liquification.text65" } }
+    element.add { type = "label", caption = { "coal_liquification.text66" } }
+    element.add { type = "label", caption = { "coal_liquification.text67" } }
+    element.add { type = "label", caption = { "coal_liquification.text68" } }
+    element.add { type = "label", caption = { "coal_liquification.text69" } }
+  end
+  
+  if page_name == "heavy_oil_cracking" then
+    element.add { type = "label", caption = { "heavy_oil_cracking.text1" } }
+    element.add { type = "label", caption = { "heavy_oil_cracking.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "heavy_oil_cracking.text2" } }
+    element.add { type = "label", caption = { "heavy_oil_cracking.text3" } }
+    element.add { type = "label", caption = { "heavy_oil_cracking.text4" } }
+    element.add { type = "label", caption = { "heavy_oil_cracking.text5" } }
+    element.add { type = "label", caption = { "heavy_oil_cracking.text6" } }
+    element.add { type = "label", caption = { "heavy_oil_cracking.text7" } }
+    element.add { type = "label", caption = { "heavy_oil_cracking.text8" } }
+    element.add { type = "label", caption = { "heavy_oil_cracking.text9" } }
+    element.add { type = "label", caption = { "heavy_oil_cracking.text10" } }
+    element.add { type = "label", caption = { "heavy_oil_cracking.text11" } }
+    element.add { type = "label", caption = { "heavy_oil_cracking.text12" } }
+    element.add { type = "label", caption = { "heavy_oil_cracking.text13" } }
+    element.add { type = "label", caption = { "heavy_oil_cracking.text14" } }
+    element.add { type = "label", caption = { "heavy_oil_cracking.text15" } }
+    element.add { type = "label", caption = { "heavy_oil_cracking.text16" } }
+    element.add { type = "label", caption = { "heavy_oil_cracking.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "heavy_oil_cracking.text17" } }
+  end
+  
+  if page_name == "solid_fuel" then
+    element.add { type = "label", caption = { "solid_fuel.text1" } }
+    element.add { type = "label", caption = { "solid_fuel.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "solid_fuel.text2" } }
+    element.add { type = "label", caption = { "solid_fuel.text3" } }
+    element.add { type = "label", caption = { "solid_fuel.text4" } }
+    element.add { type = "label", caption = { "solid_fuel.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "solid_fuel.text5" } }
+    element.add { type = "label", caption = { "solid_fuel.text6" } }
+    element.add { type = "label", caption = { "solid_fuel.text7" } }
+    element.add { type = "label", caption = { "solid_fuel.text8" } }
+    element.add { type = "label", caption = { "solid_fuel.label3" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "solid_fuel.text9" } }
+    element.add { type = "label", caption = { "solid_fuel.text10" } }
+    element.add { type = "label", caption = { "solid_fuel.text11" } }
+    element.add { type = "label", caption = { "solid_fuel.text12" } }
+    element.add { type = "label", caption = { "solid_fuel.text13" } }
+    element.add { type = "label", caption = { "solid_fuel.text14" } }
+    element.add { type = "label", caption = { "solid_fuel.text15" } }
+    element.add { type = "label", caption = { "solid_fuel.text16" } }
+    element.add { type = "label", caption = { "solid_fuel.text17" } }
+    element.add { type = "label", caption = { "solid_fuel.text18" } }
+    element.add { type = "label", caption = { "solid_fuel.text19" } }
+    element.add { type = "label", caption = { "solid_fuel.text20" } }
+    element.add { type = "label", caption = { "solid_fuel.text21" } }
+    element.add { type = "label", caption = { "solid_fuel.text22" } }
+    element.add { type = "label", caption = { "solid_fuel.text23" } }
+    element.add { type = "label", caption = { "solid_fuel.text24" } }
+    element.add { type = "label", caption = { "solid_fuel.text25" } }
+    element.add { type = "label", caption = { "solid_fuel.text26" } }
+    element.add { type = "label", caption = { "solid_fuel.text27" } }
+    element.add { type = "label", caption = { "solid_fuel.text28" } }
+    element.add { type = "label", caption = { "solid_fuel.text29" } }
+    element.add { type = "label", caption = { "solid_fuel.text30" } }
+  end
+  
+  if page_name == "lubricant" then
+    element.add { type = "label", caption = { "lubricant.text1" } }
+    element.add { type = "label", caption = { "lubricant.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "lubricant.text2" } }
+    element.add { type = "label", caption = { "lubricant.text3" } }
+    element.add { type = "label", caption = { "lubricant.text4" } }
+    element.add { type = "label", caption = { "lubricant.text5" } }
+    element.add { type = "label", caption = { "lubricant.text6" } }
+    element.add { type = "label", caption = { "lubricant.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "lubricant.text7" } }
+    element.add { type = "label", caption = { "lubricant.text8" } }
+    element.add { type = "label", caption = { "lubricant.text9" } }
+    element.add { type = "label", caption = { "lubricant.text10" } }
+  end
+  
+  if page_name == "steel" then
+    element.add { type = "label", caption = { "steel.text1" } }
+    element.add { type = "label", caption = { "steel.text2" } }
+    element.add { type = "label", caption = { "steel.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "steel.text3" } }
+    element.add { type = "label", caption = { "steel.text4" } }
+    element.add { type = "label", caption = { "steel.text5" } }
+    element.add { type = "label", caption = { "steel.text6" } }
+    element.add { type = "label", caption = { "steel.text7" } }
+    element.add { type = "label", caption = { "steel.text8" } }
+    element.add { type = "label", caption = { "steel.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "steel.text9" } }
+    element.add { type = "label", caption = { "steel.text10" } }
+    element.add { type = "label", caption = { "steel.text11" } }
+    element.add { type = "label", caption = { "steel.text12" } }
+    element.add { type = "label", caption = { "steel.text13" } }
+    element.add { type = "label", caption = { "steel.text14" } }
+    element.add { type = "label", caption = { "steel.text15" } }
+    element.add { type = "label", caption = { "steel.text16" } }
+    element.add { type = "label", caption = { "steel.text17" } }
+    element.add { type = "label", caption = { "steel.text18" } }
+    element.add { type = "label", caption = { "steel.text19" } }
+    element.add { type = "label", caption = { "steel.text20" } }
+    element.add { type = "label", caption = { "steel.text21" } }
+    element.add { type = "label", caption = { "steel.text22" } }
+    element.add { type = "label", caption = { "steel.text23" } }
+    element.add { type = "label", caption = { "steel.text24" } }
+    element.add { type = "label", caption = { "steel.text25" } }
+    element.add { type = "label", caption = { "steel.text26" } }
+    element.add { type = "label", caption = { "steel.text27" } }
+    element.add { type = "label", caption = { "steel.text28" } }
+    element.add { type = "label", caption = { "steel.text29" } }
+    element.add { type = "label", caption = { "steel.text30" } }
+  end
+  
+  if page_name == "plastic" then
+    element.add { type = "label", caption = { "plastic.text1" } }
+    element.add { type = "label", caption = { "plastic.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "plastic.text2" } }
+    element.add { type = "label", caption = { "plastic.text3" } }
+    element.add { type = "label", caption = { "plastic.text4" } }
+    element.add { type = "label", caption = { "plastic.text5" } }
+    element.add { type = "label", caption = { "plastic.text6" } }
+    element.add { type = "label", caption = { "plastic.text7" } }
+    element.add { type = "label", caption = { "plastic.text8" } }
+    element.add { type = "label", caption = { "plastic.text9" } }
+    element.add { type = "label", caption = { "plastic.text10" } }
+    element.add { type = "label", caption = { "plastic.text11" } }
+    element.add { type = "label", caption = { "plastic.text12" } }
+    element.add { type = "label", caption = { "plastic.text13" } }
+    element.add { type = "label", caption = { "plastic.text14" } }
+    element.add { type = "label", caption = { "plastic.text15" } }
+    element.add { type = "label", caption = { "plastic.text16" } }
+    element.add { type = "label", caption = { "plastic.text17" } }
+    element.add { type = "label", caption = { "plastic.text18" } }
+    element.add { type = "label", caption = { "plastic.text19" } }
+    element.add { type = "label", caption = { "plastic.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "plastic.text20" } }
+    element.add { type = "label", caption = { "plastic.text21" } }
+    element.add { type = "label", caption = { "plastic.text22" } }
+    element.add { type = "label", caption = { "plastic.text23" } }
+    element.add { type = "label", caption = { "plastic.text24" } }
+    element.add { type = "label", caption = { "plastic.text25" } }
+    element.add { type = "label", caption = { "plastic.text26" } }
+    element.add { type = "label", caption = { "plastic.text27" } }
+    element.add { type = "label", caption = { "plastic.text28" } }
+    element.add { type = "label", caption = { "plastic.text29" } }
+    element.add { type = "label", caption = { "plastic.text30" } }
+    element.add { type = "label", caption = { "plastic.text31" } }
+    element.add { type = "label", caption = { "plastic.text32" } }
+    element.add { type = "label", caption = { "plastic.text33" } }
+    element.add { type = "label", caption = { "plastic.text34" } }
+    element.add { type = "label", caption = { "plastic.text35" } }
+    element.add { type = "label", caption = { "plastic.text36" } }
+    element.add { type = "label", caption = { "plastic.label3" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "plastic.text37" } }
+    element.add { type = "label", caption = { "plastic.text38" } }
+    element.add { type = "label", caption = { "plastic.text39" } }
+    element.add { type = "label", caption = { "plastic.text40" } }
+    element.add { type = "label", caption = { "plastic.text41" } }
+    element.add { type = "label", caption = { "plastic.text42" } }
+    element.add { type = "label", caption = { "plastic.text43" } }
+    element.add { type = "label", caption = { "plastic.text44" } }
+    element.add { type = "label", caption = { "plastic.text45" } }
+    element.add { type = "label", caption = { "plastic.text46" } }
+    element.add { type = "label", caption = { "plastic.text47" } }
+    element.add { type = "label", caption = { "plastic.text48" } }
+    element.add { type = "label", caption = { "plastic.text49" } }
+    element.add { type = "label", caption = { "plastic.text50" } }
+    element.add { type = "label", caption = { "plastic.text51" } }
+  end
+  
+  if page_name == "sulfur" then
+    element.add { type = "label", caption = { "sulfur.text1" } }
+    element.add { type = "label", caption = { "sulfur.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "sulfur.text2" } }
+    element.add { type = "label", caption = { "sulfur.text3" } }
+    element.add { type = "label", caption = { "sulfur.text4" } }
+    element.add { type = "label", caption = { "sulfur.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "sulfur.text5" } }
+    element.add { type = "label", caption = { "sulfur.text6" } }
+    element.add { type = "label", caption = { "sulfur.text7" } }
+    element.add { type = "label", caption = { "sulfur.label3" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "sulfur.text8" } }
+    element.add { type = "label", caption = { "sulfur.text9" } }
+    element.add { type = "label", caption = { "sulfur.text10" } }
+    element.add { type = "label", caption = { "sulfur.label4" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "sulfur.text11" } }
+    element.add { type = "label", caption = { "sulfur.text12" } }
+    element.add { type = "label", caption = { "sulfur.text13" } }
+    element.add { type = "label", caption = { "sulfur.label5" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "sulfur.text14" } }
+    element.add { type = "label", caption = { "sulfur.text15" } }
+    element.add { type = "label", caption = { "sulfur.text16" } }
+    element.add { type = "label", caption = { "sulfur.label6" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "sulfur.text17" } }
+    element.add { type = "label", caption = { "sulfur.text18" } }
+    element.add { type = "label", caption = { "sulfur.text19" } }
+    element.add { type = "label", caption = { "sulfur.text20" } }
+    element.add { type = "label", caption = { "sulfur.text21" } }
+    element.add { type = "label", caption = { "sulfur.text22" } }
+    element.add { type = "label", caption = { "sulfur.text23" } }
+    element.add { type = "label", caption = { "sulfur.text24" } }
+    element.add { type = "label", caption = { "sulfur.text25" } }
+    element.add { type = "label", caption = { "sulfur.text26" } }
+    element.add { type = "label", caption = { "sulfur.text27" } }
+    element.add { type = "label", caption = { "sulfur.text28" } }
+    element.add { type = "label", caption = { "sulfur.text29" } }
+    element.add { type = "label", caption = { "sulfur.text30" } }
+    element.add { type = "label", caption = { "sulfur.text31" } }
+    element.add { type = "label", caption = { "sulfur.text32" } }
+  end
+  
+  if page_name == "battery" then
+    element.add { type = "label", caption = { "battery.text1" } }
+    element.add { type = "label", caption = { "battery.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "battery.text2" } }
+    element.add { type = "label", caption = { "battery.text3" } }
+    element.add { type = "label", caption = { "battery.text4" } }
+    element.add { type = "label", caption = { "battery.text5" } }
+    element.add { type = "label", caption = { "battery.text6" } }
+    element.add { type = "label", caption = { "battery.text7" } }
+    element.add { type = "label", caption = { "battery.text8" } }
+    element.add { type = "label", caption = { "battery.text9" } }
+    element.add { type = "label", caption = { "battery.text10" } }
+    element.add { type = "label", caption = { "battery.text11" } }
+    element.add { type = "label", caption = { "battery.text12" } }
+    element.add { type = "label", caption = { "battery.text13" } }
+    element.add { type = "label", caption = { "battery.text14" } }
+    element.add { type = "label", caption = { "battery.text15" } }
+    element.add { type = "label", caption = { "battery.text16" } }
+    element.add { type = "label", caption = { "battery.text17" } }
+    element.add { type = "label", caption = { "battery.text18" } }
+    element.add { type = "label", caption = { "battery.text19" } }
+    element.add { type = "label", caption = { "battery.text20" } }
+    element.add { type = "label", caption = { "battery.text21" } }
+    element.add { type = "label", caption = { "battery.text22" } }
+    element.add { type = "label", caption = { "battery.text23" } }
+    element.add { type = "label", caption = { "battery.text24" } }
+    element.add { type = "label", caption = { "battery.text25" } }
+    element.add { type = "label", caption = { "battery.text26" } }
+    element.add { type = "label", caption = { "battery.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "battery.text27" } }
+    element.add { type = "label", caption = { "battery.text28" } }
+    element.add { type = "label", caption = { "battery.text29" } }
+    element.add { type = "label", caption = { "battery.text30" } }
+    element.add { type = "label", caption = { "battery.text31" } }
+    element.add { type = "label", caption = { "battery.text32" } }
+    element.add { type = "label", caption = { "battery.text33" } }
+    element.add { type = "label", caption = { "battery.text34" } }
+    element.add { type = "label", caption = { "battery.text35" } }
+    element.add { type = "label", caption = { "battery.text36" } }
+    element.add { type = "label", caption = { "battery.text37" } }
+    element.add { type = "label", caption = { "battery.text38" } }
+    element.add { type = "label", caption = { "battery.text39" } }
+    element.add { type = "label", caption = { "battery.text40" } }
+    element.add { type = "label", caption = { "battery.text41" } }
+    element.add { type = "label", caption = { "battery.text42" } }
+    element.add { type = "label", caption = { "battery.text43" } }
+    element.add { type = "label", caption = { "battery.text44" } }
+    element.add { type = "label", caption = { "battery.text45" } }
+    element.add { type = "label", caption = { "battery.text46" } }
+    element.add { type = "label", caption = { "battery.text47" } }
+    element.add { type = "label", caption = { "battery.text48" } }
+    element.add { type = "label", caption = { "battery.text49" } }
+    element.add { type = "label", caption = { "battery.text50" } }
+    element.add { type = "label", caption = { "battery.text51" } }
+    element.add { type = "label", caption = { "battery.text52" } }
+    element.add { type = "label", caption = { "battery.text53" } }
+    element.add { type = "label", caption = { "battery.text54" } }
+    element.add { type = "label", caption = { "battery.text55" } }
+    element.add { type = "label", caption = { "battery.text56" } }
+    element.add { type = "label", caption = { "battery.text57" } }
+    element.add { type = "label", caption = { "battery.text58" } }
+    element.add { type = "label", caption = { "battery.text59" } }
+    element.add { type = "label", caption = { "battery.text60" } }
+    element.add { type = "label", caption = { "battery.text61" } }
+    element.add { type = "label", caption = { "battery.text62" } }
+    element.add { type = "label", caption = { "battery.text63" } }
+    element.add { type = "label", caption = { "battery.text64" } }
+    element.add { type = "label", caption = { "battery.label3" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "battery.text65" } }
+    element.add { type = "label", caption = { "battery.text66" } }
+    element.add { type = "label", caption = { "battery.text67" } }
+    element.add { type = "label", caption = { "battery.text68" } }
+    element.add { type = "label", caption = { "battery.text69" } }
+    element.add { type = "label", caption = { "battery.text70" } }
+    element.add { type = "label", caption = { "battery.text71" } }
+    element.add { type = "label", caption = { "battery.text72" } }
+    element.add { type = "label", caption = { "battery.text73" } }
+    element.add { type = "label", caption = { "battery.text74" } }
+    element.add { type = "label", caption = { "battery.text75" } }
+    element.add { type = "label", caption = { "battery.text76" } }
+    element.add { type = "label", caption = { "battery.text77" } }
+    element.add { type = "label", caption = { "battery.text78" } }
+    element.add { type = "label", caption = { "battery.text79" } }
+    element.add { type = "label", caption = { "battery.text80" } }
+    element.add { type = "label", caption = { "battery.text81" } }
+    element.add { type = "label", caption = { "battery.text82" } }
+    element.add { type = "label", caption = { "battery.text83" } }
+  end
+  
+  if page_name == "explosives" then
+    element.add { type = "label", caption = { "explosives.text1" } }
+    element.add { type = "label", caption = { "explosives.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "explosives.text2" } }
+    element.add { type = "label", caption = { "explosives.text3" } }
+    element.add { type = "label", caption = { "explosives.text4" } }
+    element.add { type = "label", caption = { "explosives.text5" } }
+    element.add { type = "label", caption = { "explosives.text6" } }
+    element.add { type = "label", caption = { "explosives.text7" } }
+    element.add { type = "label", caption = { "explosives.text8" } }
+    element.add { type = "label", caption = { "explosives.text9" } }
+    element.add { type = "label", caption = { "explosives.text10" } }
+    element.add { type = "label", caption = { "explosives.text11" } }
+    element.add { type = "label", caption = { "explosives.text12" } }
+    element.add { type = "label", caption = { "explosives.text13" } }
+    element.add { type = "label", caption = { "explosives.text14" } }
+    element.add { type = "label", caption = { "explosives.text15" } }
+    element.add { type = "label", caption = { "explosives.text16" } }
+    element.add { type = "label", caption = { "explosives.text17" } }
+    element.add { type = "label", caption = { "explosives.text18" } }
+    element.add { type = "label", caption = { "explosives.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "explosives.text19" } }
+    element.add { type = "label", caption = { "explosives.text20" } }
+    element.add { type = "label", caption = { "explosives.text21" } }
+    element.add { type = "label", caption = { "explosives.text22" } }
+    element.add { type = "label", caption = { "explosives.text23" } }
+  end
+  
+  if page_name == "uranium" then
+    element.add { type = "label", caption = { "uranium.text1" } }
+    element.add { type = "label", caption = { "uranium.text2" } }
+    element.add { type = "label", caption = { "uranium.text3" } }
+    element.add { type = "label", caption = { "uranium.text4" } }
+    element.add { type = "label", caption = { "uranium.text5" } }
+    element.add { type = "label", caption = { "uranium.text6" } }
+    element.add { type = "label", caption = { "uranium.text7" } }
+    element.add { type = "label", caption = { "uranium.text8" } }
+    element.add { type = "label", caption = { "uranium.text9" } }
+    element.add { type = "label", caption = { "uranium.text10" } }
+    element.add { type = "label", caption = { "uranium.text11" } }
+    element.add { type = "label", caption = { "uranium.text12" } }
+    element.add { type = "label", caption = { "uranium.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "uranium.text13" } }
+    element.add { type = "label", caption = { "uranium.text14" } }
+    element.add { type = "label", caption = { "uranium.text15" } }
+    element.add { type = "label", caption = { "uranium.text16" } }
+    element.add { type = "label", caption = { "uranium.text17" } }
+    element.add { type = "label", caption = { "uranium.text18" } }
+    element.add { type = "label", caption = { "uranium.text19" } }
+    element.add { type = "label", caption = { "uranium.text20" } }
+    element.add { type = "label", caption = { "uranium.text21" } }
+    element.add { type = "label", caption = { "uranium.text22" } }
+    element.add { type = "label", caption = { "uranium.text23" } }
+    element.add { type = "label", caption = { "uranium.text24" } }
+    element.add { type = "label", caption = { "uranium.text25" } }
+    element.add { type = "label", caption = { "uranium.text26" } }
+    element.add { type = "label", caption = { "uranium.text27" } }
+    element.add { type = "label", caption = { "uranium.text28" } }
+    element.add { type = "label", caption = { "uranium.text29" } }
+    element.add { type = "label", caption = { "uranium.text30" } }
+    element.add { type = "label", caption = { "uranium.text31" } }
+    element.add { type = "label", caption = { "uranium.text32" } }
+    element.add { type = "label", caption = { "uranium.text33" } }
+    element.add { type = "label", caption = { "uranium.text34" } }
+    element.add { type = "label", caption = { "uranium.text35" } }
+    element.add { type = "label", caption = { "uranium.text36" } }
+    element.add { type = "label", caption = { "uranium.text37" } }
+    element.add { type = "label", caption = { "uranium.text38" } }
+    element.add { type = "label", caption = { "uranium.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "uranium.text39" } }
+    element.add { type = "label", caption = { "uranium.text40" } }
+    element.add { type = "label", caption = { "uranium.text41" } }
+    element.add { type = "label", caption = { "uranium.text42" } }
+    element.add { type = "label", caption = { "uranium.text43" } }
+    element.add { type = "label", caption = { "uranium.text44" } }
+    element.add { type = "label", caption = { "uranium.text45" } }
+    element.add { type = "label", caption = { "uranium.text46" } }
+    element.add { type = "label", caption = { "uranium.text47" } }
+    element.add { type = "label", caption = { "uranium.text48" } }
+    element.add { type = "label", caption = { "uranium.text49" } }
+    element.add { type = "label", caption = { "uranium.text50" } }
+    element.add { type = "label", caption = { "uranium.text51" } }
+    element.add { type = "label", caption = { "uranium.text52" } }
+    element.add { type = "label", caption = { "uranium.text53" } }
+    element.add { type = "label", caption = { "uranium.text54" } }
+    element.add { type = "label", caption = { "uranium.text55" } }
+    element.add { type = "label", caption = { "uranium.text56" } }
   end
   
 end

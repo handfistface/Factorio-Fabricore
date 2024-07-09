@@ -40,7 +40,6 @@ function fabricore_menu(player_index)
       steam_engine = 1,
       solar_panel = 1,
       accumulator = 1,
-      nuclear_reactor = 1,
       heat_pipes = 1,
       heat_exchanger = 1,
       steam_turbine = 1
@@ -67,7 +66,17 @@ function fabricore_menu(player_index)
     sulfur = 1,
     battery = 1,
     explosives = 1,
-    uranium = 1
+    uranium = 1,
+    iron_gear = 1,
+    barrel = 1,
+    engine = 1,
+    electric_motor = 1,
+    uranium_and_nuclear = {
+      nuclear_reactor = 1,
+      uranium_fuel_rod = 1,
+      nuclear_fuel_reprocessing = 1,
+      kovarex_enrichment_process = 1
+    }
   }
 end
 
@@ -1680,6 +1689,368 @@ function fabricore_page_content(page_name, player_index, element)
     element.add { type = "label", caption = { "uranium.text54" } }
     element.add { type = "label", caption = { "uranium.text55" } }
     element.add { type = "label", caption = { "uranium.text56" } }
+  end
+  
+  if page_name == "iron_gear" then
+    element.add { type = "label", caption = { "iron_gear.text1" } }
+    element.add { type = "label", caption = { "iron_gear.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "iron_gear.text2" } }
+    element.add { type = "label", caption = { "iron_gear.text3" } }
+    element.add { type = "label", caption = { "iron_gear.text4" } }
+    element.add { type = "label", caption = { "iron_gear.text5" } }
+    element.add { type = "label", caption = { "iron_gear.text6" } }
+    element.add { type = "label", caption = { "iron_gear.text7" } }
+    element.add { type = "label", caption = { "iron_gear.text8" } }
+    element.add { type = "label", caption = { "iron_gear.text9" } }
+    element.add { type = "label", caption = { "iron_gear.text10" } }
+    element.add { type = "label", caption = { "iron_gear.text11" } }
+    element.add { type = "label", caption = { "iron_gear.text12" } }
+    element.add { type = "label", caption = { "iron_gear.text13" } }
+    element.add { type = "label", caption = { "iron_gear.text14" } }
+    element.add { type = "label", caption = { "iron_gear.text15" } }
+    element.add { type = "label", caption = { "iron_gear.text16" } }
+    element.add { type = "label", caption = { "iron_gear.text17" } }
+    element.add { type = "label", caption = { "iron_gear.text18" } }
+    element.add { type = "label", caption = { "iron_gear.text19" } }
+    element.add { type = "label", caption = { "iron_gear.text20" } }
+    element.add { type = "label", caption = { "iron_gear.text21" } }
+    element.add { type = "label", caption = { "iron_gear.text22" } }
+    element.add { type = "label", caption = { "iron_gear.text23" } }
+    element.add { type = "label", caption = { "iron_gear.text24" } }
+    element.add { type = "label", caption = { "iron_gear.text25" } }
+    element.add { type = "label", caption = { "iron_gear.text26" } }
+    element.add { type = "label", caption = { "iron_gear.text27" } }
+    element.add { type = "label", caption = { "iron_gear.text28" } }
+    element.add { type = "label", caption = { "iron_gear.text29" } }
+    element.add { type = "label", caption = { "iron_gear.text30" } }
+    element.add { type = "label", caption = { "iron_gear.text31" } }
+    element.add { type = "label", caption = { "iron_gear.text32" } }
+    element.add { type = "label", caption = { "iron_gear.text33" } }
+    element.add { type = "label", caption = { "iron_gear.text34" } }
+    element.add { type = "label", caption = { "iron_gear.text35" } }
+    element.add { type = "label", caption = { "iron_gear.text36" } }
+    element.add { type = "label", caption = { "iron_gear.text37" } }
+    element.add { type = "label", caption = { "iron_gear.text38" } }
+    element.add { type = "label", caption = { "iron_gear.text39" } }
+    element.add { type = "label", caption = { "iron_gear.text40" } }
+    element.add { type = "label", caption = { "iron_gear.text41" } }
+    element.add { type = "label", caption = { "iron_gear.text42" } }
+    element.add { type = "label", caption = { "iron_gear.text43" } }
+    element.add { type = "label", caption = { "iron_gear.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "iron_gear.text44" } }
+    element.add { type = "label", caption = { "iron_gear.text45" } }
+    element.add { type = "label", caption = { "iron_gear.text46" } }
+    element.add { type = "label", caption = { "iron_gear.text47" } }
+    element.add { type = "label", caption = { "iron_gear.text48" } }
+    element.add { type = "label", caption = { "iron_gear.text49" } }
+    element.add { type = "label", caption = { "iron_gear.text50" } }
+    element.add { type = "label", caption = { "iron_gear.label3" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "iron_gear.text51" } }
+    element.add { type = "label", caption = { "iron_gear.text52" } }
+    element.add { type = "label", caption = { "iron_gear.text53" } }
+    element.add { type = "label", caption = { "iron_gear.text54" } }
+    element.add { type = "label", caption = { "iron_gear.text55" } }
+    element.add { type = "label", caption = { "iron_gear.text56" } }
+    element.add { type = "label", caption = { "iron_gear.text57" } }
+    element.add { type = "label", caption = { "iron_gear.text58" } }
+    element.add { type = "label", caption = { "iron_gear.text59" } }
+    element.add { type = "label", caption = { "iron_gear.text60" } }
+    element.add { type = "label", caption = { "iron_gear.text61" } }
+    element.add { type = "label", caption = { "iron_gear.text62" } }
+    element.add { type = "label", caption = { "iron_gear.text63" } }
+    element.add { type = "label", caption = { "iron_gear.text64" } }
+    element.add { type = "label", caption = { "iron_gear.text65" } }
+    element.add { type = "label", caption = { "iron_gear.text66" } }
+    element.add { type = "label", caption = { "iron_gear.text67" } }
+    element.add { type = "label", caption = { "iron_gear.text68" } }
+    element.add { type = "label", caption = { "iron_gear.text69" } }
+  end
+  
+  if page_name == "barrel" then
+    element.add { type = "label", caption = { "barrel.text1" } }
+    element.add { type = "label", caption = { "barrel.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "barrel.text2" } }
+    element.add { type = "label", caption = { "barrel.text3" } }
+    element.add { type = "label", caption = { "barrel.text4" } }
+    element.add { type = "label", caption = { "barrel.text5" } }
+    element.add { type = "label", caption = { "barrel.text6" } }
+    element.add { type = "label", caption = { "barrel.text7" } }
+    element.add { type = "label", caption = { "barrel.text8" } }
+    element.add { type = "label", caption = { "barrel.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "barrel.text9" } }
+    element.add { type = "label", caption = { "barrel.text10" } }
+    element.add { type = "label", caption = { "barrel.text11" } }
+    element.add { type = "label", caption = { "barrel.text12" } }
+    element.add { type = "label", caption = { "barrel.text13" } }
+    element.add { type = "label", caption = { "barrel.text14" } }
+    element.add { type = "label", caption = { "barrel.text15" } }
+    element.add { type = "label", caption = { "barrel.text16" } }
+    element.add { type = "label", caption = { "barrel.text17" } }
+  end
+  
+  if page_name == "engine" then
+    element.add { type = "label", caption = { "engine.text1" } }
+    element.add { type = "label", caption = { "engine.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "engine.text2" } }
+    element.add { type = "label", caption = { "engine.text3" } }
+    element.add { type = "label", caption = { "engine.text4" } }
+    element.add { type = "label", caption = { "engine.text5" } }
+    element.add { type = "label", caption = { "engine.text6" } }
+    element.add { type = "label", caption = { "engine.text7" } }
+    element.add { type = "label", caption = { "engine.text8" } }
+    element.add { type = "label", caption = { "engine.text9" } }
+    element.add { type = "label", caption = { "engine.text10" } }
+    element.add { type = "label", caption = { "engine.text11" } }
+    element.add { type = "label", caption = { "engine.text12" } }
+    element.add { type = "label", caption = { "engine.text13" } }
+    element.add { type = "label", caption = { "engine.text14" } }
+    element.add { type = "label", caption = { "engine.text15" } }
+    element.add { type = "label", caption = { "engine.text16" } }
+    element.add { type = "label", caption = { "engine.text17" } }
+    element.add { type = "label", caption = { "engine.text18" } }
+    element.add { type = "label", caption = { "engine.text19" } }
+    element.add { type = "label", caption = { "engine.text20" } }
+    element.add { type = "label", caption = { "engine.text21" } }
+    element.add { type = "label", caption = { "engine.text22" } }
+    element.add { type = "label", caption = { "engine.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "engine.text23" } }
+    element.add { type = "label", caption = { "engine.text24" } }
+    element.add { type = "label", caption = { "engine.text25" } }
+    element.add { type = "label", caption = { "engine.text26" } }
+    element.add { type = "label", caption = { "engine.text27" } }
+    element.add { type = "label", caption = { "engine.text28" } }
+    element.add { type = "label", caption = { "engine.text29" } }
+    element.add { type = "label", caption = { "engine.text30" } }
+    element.add { type = "label", caption = { "engine.text31" } }
+    element.add { type = "label", caption = { "engine.text32" } }
+    element.add { type = "label", caption = { "engine.text33" } }
+    element.add { type = "label", caption = { "engine.text34" } }
+    element.add { type = "label", caption = { "engine.text35" } }
+    element.add { type = "label", caption = { "engine.text36" } }
+    element.add { type = "label", caption = { "engine.text37" } }
+    element.add { type = "label", caption = { "engine.text38" } }
+    element.add { type = "label", caption = { "engine.text39" } }
+    element.add { type = "label", caption = { "engine.text40" } }
+    element.add { type = "label", caption = { "engine.text41" } }
+    element.add { type = "label", caption = { "engine.text42" } }
+    element.add { type = "label", caption = { "engine.text43" } }
+    element.add { type = "label", caption = { "engine.text44" } }
+    element.add { type = "label", caption = { "engine.text45" } }
+    element.add { type = "label", caption = { "engine.text46" } }
+    element.add { type = "label", caption = { "engine.text47" } }
+    element.add { type = "label", caption = { "engine.text48" } }
+    element.add { type = "label", caption = { "engine.text49" } }
+    element.add { type = "label", caption = { "engine.text50" } }
+    element.add { type = "label", caption = { "engine.text51" } }
+    element.add { type = "label", caption = { "engine.text52" } }
+    element.add { type = "label", caption = { "engine.text53" } }
+    element.add { type = "label", caption = { "engine.text54" } }
+    element.add { type = "label", caption = { "engine.text55" } }
+    element.add { type = "label", caption = { "engine.text56" } }
+    element.add { type = "label", caption = { "engine.text57" } }
+    element.add { type = "label", caption = { "engine.text58" } }
+    element.add { type = "label", caption = { "engine.text59" } }
+    element.add { type = "label", caption = { "engine.text60" } }
+    element.add { type = "label", caption = { "engine.text61" } }
+    element.add { type = "label", caption = { "engine.text62" } }
+    element.add { type = "label", caption = { "engine.text63" } }
+    element.add { type = "label", caption = { "engine.text64" } }
+    element.add { type = "label", caption = { "engine.text65" } }
+    element.add { type = "label", caption = { "engine.text66" } }
+    element.add { type = "label", caption = { "engine.text67" } }
+    element.add { type = "label", caption = { "engine.text68" } }
+    element.add { type = "label", caption = { "engine.text69" } }
+    element.add { type = "label", caption = { "engine.text70" } }
+  end
+  
+  if page_name == "electric_motor" then
+    element.add { type = "label", caption = { "electric_motor.text1" } }
+    element.add { type = "label", caption = { "electric_motor.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "electric_motor.text2" } }
+    element.add { type = "label", caption = { "electric_motor.text3" } }
+    element.add { type = "label", caption = { "electric_motor.text4" } }
+    element.add { type = "label", caption = { "electric_motor.text5" } }
+    element.add { type = "label", caption = { "electric_motor.text6" } }
+    element.add { type = "label", caption = { "electric_motor.text7" } }
+    element.add { type = "label", caption = { "electric_motor.text8" } }
+    element.add { type = "label", caption = { "electric_motor.text9" } }
+    element.add { type = "label", caption = { "electric_motor.text10" } }
+    element.add { type = "label", caption = { "electric_motor.text11" } }
+    element.add { type = "label", caption = { "electric_motor.text12" } }
+    element.add { type = "label", caption = { "electric_motor.text13" } }
+    element.add { type = "label", caption = { "electric_motor.text14" } }
+    element.add { type = "label", caption = { "electric_motor.text15" } }
+    element.add { type = "label", caption = { "electric_motor.text16" } }
+    element.add { type = "label", caption = { "electric_motor.text17" } }
+    element.add { type = "label", caption = { "electric_motor.text18" } }
+    element.add { type = "label", caption = { "electric_motor.text19" } }
+    element.add { type = "label", caption = { "electric_motor.text20" } }
+    element.add { type = "label", caption = { "electric_motor.text21" } }
+    element.add { type = "label", caption = { "electric_motor.text22" } }
+    element.add { type = "label", caption = { "electric_motor.text23" } }
+    element.add { type = "label", caption = { "electric_motor.text24" } }
+    element.add { type = "label", caption = { "electric_motor.text25" } }
+    element.add { type = "label", caption = { "electric_motor.text26" } }
+    element.add { type = "label", caption = { "electric_motor.text27" } }
+    element.add { type = "label", caption = { "electric_motor.text28" } }
+    element.add { type = "label", caption = { "electric_motor.text29" } }
+    element.add { type = "label", caption = { "electric_motor.text30" } }
+    element.add { type = "label", caption = { "electric_motor.text31" } }
+    element.add { type = "label", caption = { "electric_motor.text32" } }
+    element.add { type = "label", caption = { "electric_motor.text33" } }
+    element.add { type = "label", caption = { "electric_motor.text34" } }
+    element.add { type = "label", caption = { "electric_motor.text35" } }
+    element.add { type = "label", caption = { "electric_motor.text36" } }
+    element.add { type = "label", caption = { "electric_motor.text37" } }
+    element.add { type = "label", caption = { "electric_motor.text38" } }
+    element.add { type = "label", caption = { "electric_motor.text39" } }
+    element.add { type = "label", caption = { "electric_motor.text40" } }
+    element.add { type = "label", caption = { "electric_motor.text41" } }
+    element.add { type = "label", caption = { "electric_motor.text42" } }
+    element.add { type = "label", caption = { "electric_motor.text43" } }
+    element.add { type = "label", caption = { "electric_motor.text44" } }
+    element.add { type = "label", caption = { "electric_motor.text45" } }
+    element.add { type = "label", caption = { "electric_motor.text46" } }
+    element.add { type = "label", caption = { "electric_motor.text47" } }
+    element.add { type = "label", caption = { "electric_motor.text48" } }
+    element.add { type = "label", caption = { "electric_motor.text49" } }
+    element.add { type = "label", caption = { "electric_motor.text50" } }
+    element.add { type = "label", caption = { "electric_motor.text51" } }
+    element.add { type = "label", caption = { "electric_motor.text52" } }
+    element.add { type = "label", caption = { "electric_motor.text53" } }
+    element.add { type = "label", caption = { "electric_motor.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "electric_motor.text54" } }
+    element.add { type = "label", caption = { "electric_motor.text55" } }
+    element.add { type = "label", caption = { "electric_motor.text56" } }
+    element.add { type = "label", caption = { "electric_motor.text57" } }
+    element.add { type = "label", caption = { "electric_motor.text58" } }
+    element.add { type = "label", caption = { "electric_motor.text59" } }
+    element.add { type = "label", caption = { "electric_motor.text60" } }
+    element.add { type = "label", caption = { "electric_motor.text61" } }
+    element.add { type = "label", caption = { "electric_motor.text62" } }
+    element.add { type = "label", caption = { "electric_motor.text63" } }
+    element.add { type = "label", caption = { "electric_motor.text64" } }
+    element.add { type = "label", caption = { "electric_motor.text65" } }
+    element.add { type = "label", caption = { "electric_motor.text66" } }
+    element.add { type = "label", caption = { "electric_motor.text67" } }
+    element.add { type = "label", caption = { "electric_motor.text68" } }
+    element.add { type = "label", caption = { "electric_motor.text69" } }
+    element.add { type = "label", caption = { "electric_motor.text70" } }
+    element.add { type = "label", caption = { "electric_motor.text71" } }
+    element.add { type = "label", caption = { "electric_motor.text72" } }
+    element.add { type = "label", caption = { "electric_motor.text73" } }
+    element.add { type = "label", caption = { "electric_motor.text74" } }
+    element.add { type = "label", caption = { "electric_motor.text75" } }
+    element.add { type = "label", caption = { "electric_motor.text76" } }
+    element.add { type = "label", caption = { "electric_motor.text77" } }
+    element.add { type = "label", caption = { "electric_motor.text78" } }
+    element.add { type = "label", caption = { "electric_motor.text79" } }
+    element.add { type = "label", caption = { "electric_motor.text80" } }
+    element.add { type = "label", caption = { "electric_motor.text81" } }
+    element.add { type = "label", caption = { "electric_motor.text82" } }
+    element.add { type = "label", caption = { "electric_motor.text83" } }
+    element.add { type = "label", caption = { "electric_motor.text84" } }
+    element.add { type = "label", caption = { "electric_motor.text85" } }
+    element.add { type = "label", caption = { "electric_motor.text86" } }
+    element.add { type = "label", caption = { "electric_motor.text87" } }
+    element.add { type = "label", caption = { "electric_motor.text88" } }
+    element.add { type = "label", caption = { "electric_motor.text89" } }
+    element.add { type = "label", caption = { "electric_motor.label3" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "electric_motor.text90" } }
+    element.add { type = "label", caption = { "electric_motor.text91" } }
+    element.add { type = "label", caption = { "electric_motor.text92" } }
+    element.add { type = "label", caption = { "electric_motor.text93" } }
+    element.add { type = "label", caption = { "electric_motor.text94" } }
+    element.add { type = "label", caption = { "electric_motor.text95" } }
+    element.add { type = "label", caption = { "electric_motor.text96" } }
+    element.add { type = "label", caption = { "electric_motor.text97" } }
+    element.add { type = "label", caption = { "electric_motor.text98" } }
+    element.add { type = "label", caption = { "electric_motor.text99" } }
+    element.add { type = "label", caption = { "electric_motor.text100" } }
+    element.add { type = "label", caption = { "electric_motor.text101" } }
+    element.add { type = "label", caption = { "electric_motor.text102" } }
+    element.add { type = "label", caption = { "electric_motor.text103" } }
+    element.add { type = "label", caption = { "electric_motor.text104" } }
+    element.add { type = "label", caption = { "electric_motor.text105" } }
+    element.add { type = "label", caption = { "electric_motor.text106" } }
+    element.add { type = "label", caption = { "electric_motor.text107" } }
+    element.add { type = "label", caption = { "electric_motor.text108" } }
+    element.add { type = "label", caption = { "electric_motor.text109" } }
+    element.add { type = "label", caption = { "electric_motor.text110" } }
+    element.add { type = "label", caption = { "electric_motor.text111" } }
+    element.add { type = "label", caption = { "electric_motor.text112" } }
+    element.add { type = "label", caption = { "electric_motor.text113" } }
+    element.add { type = "label", caption = { "electric_motor.text114" } }
+  end
+  
+  if page_name == "uranium_fuel_rod" then
+    element.add { type = "label", caption = { "uranium_fuel_rod.text1" } }
+    element.add { type = "label", caption = { "uranium_fuel_rod.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "uranium_fuel_rod.text2" } }
+    element.add { type = "label", caption = { "uranium_fuel_rod.text3" } }
+    element.add { type = "label", caption = { "uranium_fuel_rod.text4" } }
+    element.add { type = "label", caption = { "uranium_fuel_rod.text5" } }
+    element.add { type = "label", caption = { "uranium_fuel_rod.text6" } }
+    element.add { type = "label", caption = { "uranium_fuel_rod.text7" } }
+    element.add { type = "label", caption = { "uranium_fuel_rod.text8" } }
+    element.add { type = "label", caption = { "uranium_fuel_rod.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "uranium_fuel_rod.text9" } }
+    element.add { type = "label", caption = { "uranium_fuel_rod.text10" } }
+    element.add { type = "label", caption = { "uranium_fuel_rod.text11" } }
+    element.add { type = "label", caption = { "uranium_fuel_rod.text12" } }
+    element.add { type = "label", caption = { "uranium_fuel_rod.text13" } }
+  end
+  
+  if page_name == "nuclear_fuel_reprocessing" then
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text1" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text2" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text3" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text4" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text5" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text6" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text7" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text8" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text9" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text10" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text11" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text12" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text13" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text14" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text15" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text16" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text17" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text18" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text19" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text20" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text21" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text22" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text23" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text24" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text25" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text26" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text27" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text28" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text29" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text30" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text31" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text32" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text33" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text34" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text35" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text36" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text37" } }
+    element.add { type = "label", caption = { "nuclear_fuel_reprocessing.text38" } }
+  end
+  
+  if page_name == "kovarex_enrichment_process" then
+    element.add { type = "label", caption = { "kovarex_enrichment_process.text1" } }
+    element.add { type = "label", caption = { "kovarex_enrichment_process.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "kovarex_enrichment_process.text2" } }
+    element.add { type = "label", caption = { "kovarex_enrichment_process.text3" } }
+    element.add { type = "label", caption = { "kovarex_enrichment_process.text4" } }
+    element.add { type = "label", caption = { "kovarex_enrichment_process.text5" } }
   end
   
 end

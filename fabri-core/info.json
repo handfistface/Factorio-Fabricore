@@ -5,7 +5,8 @@
     "author": "John Kirschner",
     "factorio_version": "1.1",
     "dependencies": [
-        "base >= 1.1"
+        "base >= 1.1",
+        "informatron >= 0.3.4"
     ],
     "description": "This mod attempts to document some of the actual refination process behind items being fabricated."
 }

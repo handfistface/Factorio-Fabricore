@@ -1,5 +1,7 @@
 --control.lua
 
+local Pin = {}
+
 -- Remote interface
 remote.add_interface("fabricore", {
   informatron_menu = function(data)
@@ -7,7 +9,17 @@ remote.add_interface("fabricore", {
   end,
   informatron_page_content = function(data)
     return fabricore_page_content(data.page_name, data.player_index, data.element)
-  end
+  end,
+  
+  -- causes Informatron to open to a specific page
+  -- informatron_open_to_page = function(data)
+  --   if data.player_index and data.interface and data.page_name then
+  --     local player = game.get_player(data.player_index)
+  --     if player then
+  --       Informatron.open(player, {interface=data.interface, page_name=data.page_name})
+  --     end
+  --   end
+  -- end
 })
 
 function fabricore_menu(player_index)
@@ -76,6 +88,21 @@ function fabricore_menu(player_index)
       uranium_fuel_rod = 1,
       nuclear_fuel_reprocessing = 1,
       kovarex_enrichment_process = 1
+    },
+    weaponry = {
+      pistol = 1,
+      submachine_gun = 1,
+      shotgun = 1,
+      rocket_launcher = 1,
+      flamethrower = 1,
+      land_mine = 1,
+      pistol_ammo = 1,
+      shotgun_shell = 1,
+      tank_shell = 1,
+      artillery_shell = 1,
+      grenade = 1,
+      nightvision = 1,
+      radar = 1
     }
   }
 end
@@ -92,42 +119,280 @@ function fabricore_page_content(page_name, player_index, element)
   end
 
   if page_name == "iron_ore" then
-    element.add { type = "label", caption = { "iron_ore.text1" } }
     element.add { type = "label", caption = { "iron_ore.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "iron_ore.text1" } }
     element.add { type = "label", caption = { "iron_ore.text2" } }
-    element.add { type = "label", caption = { "iron_ore.label2" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "iron_ore.text3" } }
-    element.add { type = "label", caption = { "iron_ore.label3" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "iron_ore.text4" } }
-    element.add { type = "label", caption = { "iron_ore.label4" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "iron_ore.text5" } }
     element.add { type = "label", caption = { "iron_ore.text6" } }
     element.add { type = "label", caption = { "iron_ore.text7" } }
     element.add { type = "label", caption = { "iron_ore.text8" } }
-    element.add { type = "label", caption = { "iron_ore.label5" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "iron_ore.text9" } }
+    element.add { type = "label", caption = { "iron_ore.label2" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "iron_ore.text10" } }
+    element.add { type = "label", caption = { "iron_ore.text11" } }
+    element.add { type = "label", caption = { "iron_ore.text12" } }
+    element.add { type = "label", caption = { "iron_ore.text13" } }
+    element.add { type = "label", caption = { "iron_ore.label3" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "iron_ore.text14" } }
+    element.add { type = "label", caption = { "iron_ore.text15" } }
+    element.add { type = "label", caption = { "iron_ore.text16" } }
+    element.add { type = "label", caption = { "iron_ore.text17" } }
+    element.add { type = "label", caption = { "iron_ore.text18" } }
+    element.add { type = "label", caption = { "iron_ore.text19" } }
+    element.add { type = "label", caption = { "iron_ore.text20" } }
+    element.add { type = "label", caption = { "iron_ore.text21" } }
+    element.add { type = "label", caption = { "iron_ore.text22" } }
+    element.add { type = "label", caption = { "iron_ore.text23" } }
+    element.add { type = "label", caption = { "iron_ore.text24" } }
+    element.add { type = "label", caption = { "iron_ore.text25" } }
+    element.add { type = "label", caption = { "iron_ore.text26" } }
+    element.add { type = "label", caption = { "iron_ore.text27" } }
+    element.add { type = "label", caption = { "iron_ore.label4" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "iron_ore.text28" } }
+    element.add { type = "label", caption = { "iron_ore.text29" } }
+    element.add { type = "label", caption = { "iron_ore.text30" } }
+    element.add { type = "label", caption = { "iron_ore.text31" } }
+    element.add { type = "label", caption = { "iron_ore.text32" } }
+    element.add { type = "label", caption = { "iron_ore.text33" } }
+    element.add { type = "label", caption = { "iron_ore.text34" } }
+    element.add { type = "label", caption = { "iron_ore.text35" } }
+    element.add { type = "label", caption = { "iron_ore.text36" } }
+    element.add { type = "label", caption = { "iron_ore.text37" } }
+    element.add { type = "label", caption = { "iron_ore.text38" } }
+    element.add { type = "label", caption = { "iron_ore.text39" } }
+    element.add { type = "label", caption = { "iron_ore.text40" } }
+    element.add { type = "label", caption = { "iron_ore.text41" } }
+    element.add { type = "label", caption = { "iron_ore.text42" } }
+    element.add { type = "label", caption = { "iron_ore.text43" } }
+    element.add { type = "label", caption = { "iron_ore.text44" } }
+    element.add { type = "label", caption = { "iron_ore.text45" } }
+    element.add { type = "label", caption = { "iron_ore.text46" } }
+    element.add { type = "label", caption = { "iron_ore.text47" } }
+    element.add { type = "label", caption = { "iron_ore.text48" } }
+    element.add { type = "label", caption = { "iron_ore.text49" } }
+    element.add { type = "label", caption = { "iron_ore.text50" } }
+    element.add { type = "label", caption = { "iron_ore.text51" } }
+    element.add { type = "label", caption = { "iron_ore.text52" } }
+    element.add { type = "label", caption = { "iron_ore.label5" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "iron_ore.text53" } }
+    element.add { type = "label", caption = { "iron_ore.text54" } }
+    element.add { type = "label", caption = { "iron_ore.text55" } }
+    element.add { type = "label", caption = { "iron_ore.text56" } }
+    element.add { type = "label", caption = { "iron_ore.text57" } }
+    element.add { type = "label", caption = { "iron_ore.text58" } }
+    element.add { type = "label", caption = { "iron_ore.text59" } }
+    element.add { type = "label", caption = { "iron_ore.text60" } }
+    element.add { type = "label", caption = { "iron_ore.text61" } }
+    element.add { type = "label", caption = { "iron_ore.text62" } }
+    element.add { type = "label", caption = { "iron_ore.text63" } }
+    element.add { type = "label", caption = { "iron_ore.text64" } }
+    element.add { type = "label", caption = { "iron_ore.text65" } }
+    element.add { type = "label", caption = { "iron_ore.text66" } }
+    element.add { type = "label", caption = { "iron_ore.text67" } }
+    element.add { type = "label", caption = { "iron_ore.text68" } }
+    element.add { type = "label", caption = { "iron_ore.text69" } }
+    element.add { type = "label", caption = { "iron_ore.text70" } }
+    element.add { type = "label", caption = { "iron_ore.label6" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "iron_ore.text71" } }
+    element.add { type = "label", caption = { "iron_ore.text72" } }
+    element.add { type = "label", caption = { "iron_ore.text73" } }
+    element.add { type = "label", caption = { "iron_ore.text74" } }
+    element.add { type = "label", caption = { "iron_ore.text75" } }
+    element.add { type = "label", caption = { "iron_ore.text76" } }
+    element.add { type = "label", caption = { "iron_ore.text77" } }
+    element.add { type = "label", caption = { "iron_ore.text78" } }
+    element.add { type = "label", caption = { "iron_ore.text79" } }
+    element.add { type = "label", caption = { "iron_ore.text80" } }
+    element.add { type = "label", caption = { "iron_ore.text81" } }
+    element.add { type = "label", caption = { "iron_ore.text82" } }
+    element.add { type = "label", caption = { "iron_ore.text83" } }
+    element.add { type = "label", caption = { "iron_ore.text84" } }
+    element.add { type = "label", caption = { "iron_ore.text85" } }
+    element.add { type = "label", caption = { "iron_ore.text86" } }
+    element.add { type = "label", caption = { "iron_ore.text87" } }
+    element.add { type = "label", caption = { "iron_ore.text88" } }
+    element.add { type = "label", caption = { "iron_ore.text89" } }
+    element.add { type = "label", caption = { "iron_ore.text90" } }
+    element.add { type = "label", caption = { "iron_ore.text91" } }
+    element.add { type = "label", caption = { "iron_ore.text92" } }
+    element.add { type = "label", caption = { "iron_ore.text93" } }
+    element.add { type = "label", caption = { "iron_ore.text94" } }
+    element.add { type = "label", caption = { "iron_ore.label7" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "iron_ore.text95" } }
+    element.add { type = "label", caption = { "iron_ore.text96" } }
+    element.add { type = "label", caption = { "iron_ore.text97" } }
+    element.add { type = "label", caption = { "iron_ore.text98" } }
+    element.add { type = "label", caption = { "iron_ore.text99" } }
+    element.add { type = "label", caption = { "iron_ore.text100" } }
+    element.add { type = "label", caption = { "iron_ore.text101" } }
+    element.add { type = "label", caption = { "iron_ore.text102" } }
+    element.add { type = "label", caption = { "iron_ore.text103" } }
+    element.add { type = "label", caption = { "iron_ore.text104" } }
+    element.add { type = "label", caption = { "iron_ore.text105" } }
+    element.add { type = "label", caption = { "iron_ore.text106" } }
+    element.add { type = "label", caption = { "iron_ore.text107" } }
+    element.add { type = "label", caption = { "iron_ore.text108" } }
+    element.add { type = "label", caption = { "iron_ore.text109" } }
+    element.add { type = "label", caption = { "iron_ore.text110" } }
+    element.add { type = "label", caption = { "iron_ore.text111" } }
+    element.add { type = "label", caption = { "iron_ore.text112" } }
+    element.add { type = "label", caption = { "iron_ore.text113" } }
+    element.add { type = "label", caption = { "iron_ore.label8" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "iron_ore.text114" } }
+    element.add { type = "label", caption = { "iron_ore.text115" } }
+    element.add { type = "label", caption = { "iron_ore.text116" } }
+    element.add { type = "label", caption = { "iron_ore.text117" } }
+    element.add { type = "label", caption = { "iron_ore.text118" } }
+    element.add { type = "label", caption = { "iron_ore.text119" } }
+    element.add { type = "label", caption = { "iron_ore.text120" } }
+    element.add { type = "label", caption = { "iron_ore.text121" } }
+    element.add { type = "label", caption = { "iron_ore.text122" } }
+    element.add { type = "label", caption = { "iron_ore.text123" } }
+    element.add { type = "label", caption = { "iron_ore.text124" } }
+    element.add { type = "label", caption = { "iron_ore.text125" } }
+    element.add { type = "label", caption = { "iron_ore.text126" } }
+    element.add { type = "label", caption = { "iron_ore.text127" } }
+    element.add { type = "label", caption = { "iron_ore.text128" } }
+    element.add { type = "label", caption = { "iron_ore.text129" } }
+    element.add { type = "label", caption = { "iron_ore.text130" } }
+    element.add { type = "label", caption = { "iron_ore.text131" } }
+    element.add { type = "label", caption = { "iron_ore.text132" } }
+    element.add { type = "label", caption = { "iron_ore.text133" } }
+    element.add { type = "label", caption = { "iron_ore.text134" } }
+    element.add { type = "label", caption = { "iron_ore.text135" } }
+    element.add { type = "label", caption = { "iron_ore.text136" } }
+    element.add { type = "label", caption = { "iron_ore.text137" } }
+    element.add { type = "label", caption = { "iron_ore.label9" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "iron_ore.text138" } }
+    element.add { type = "label", caption = { "iron_ore.text139" } }
+    element.add { type = "label", caption = { "iron_ore.text140" } }
+    element.add { type = "label", caption = { "iron_ore.text141" } }
+    element.add { type = "label", caption = { "iron_ore.text142" } }
+    element.add { type = "label", caption = { "iron_ore.text143" } }
+    element.add { type = "label", caption = { "iron_ore.text144" } }
+    element.add { type = "label", caption = { "iron_ore.text145" } }
+    element.add { type = "label", caption = { "iron_ore.text146" } }
+    element.add { type = "label", caption = { "iron_ore.text147" } }
+    element.add { type = "label", caption = { "iron_ore.text148" } }
+    element.add { type = "label", caption = { "iron_ore.text149" } }
+    element.add { type = "label", caption = { "iron_ore.text150" } }
+    element.add { type = "label", caption = { "iron_ore.text151" } }
+    element.add { type = "label", caption = { "iron_ore.label10" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "iron_ore.text152" } }
+    element.add { type = "label", caption = { "iron_ore.text153" } }
+    element.add { type = "label", caption = { "iron_ore.text154" } }
+    element.add { type = "label", caption = { "iron_ore.text155" } }
+    element.add { type = "label", caption = { "iron_ore.text156" } }
+    element.add { type = "label", caption = { "iron_ore.label11" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "iron_ore.text157" } }
+    element.add { type = "label", caption = { "iron_ore.text158" } }
+    element.add { type = "label", caption = { "iron_ore.text159" } }
+    element.add { type = "label", caption = { "iron_ore.text160" } }
+    element.add { type = "label", caption = { "iron_ore.text161" } }
+    element.add { type = "label", caption = { "iron_ore.text162" } }
+    element.add { type = "label", caption = { "iron_ore.text163" } }
+    element.add { type = "label", caption = { "iron_ore.text164" } }
+    element.add { type = "label", caption = { "iron_ore.text165" } }
+    element.add { type = "label", caption = { "iron_ore.text166" } }
+    element.add { type = "label", caption = { "iron_ore.text167" } }
   end
-
+  
   if page_name == "copper_ore" then
     element.add { type = "label", caption = { "copper_ore.text1" } }
     element.add { type = "label", caption = { "copper_ore.label1" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "copper_ore.text2" } }
-    element.add { type = "label", caption = { "copper_ore.label2" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "copper_ore.text3" } }
-    element.add { type = "label", caption = { "copper_ore.label3" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "copper_ore.text4" } }
-    element.add { type = "label", caption = { "copper_ore.label4" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "copper_ore.text5" } }
-    element.add { type = "label", caption = { "copper_ore.label5" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "copper_ore.text6" } }
-    element.add { type = "label", caption = { "copper_ore.label6" }, style = "heading_1_label" }
     element.add { type = "label", caption = { "copper_ore.text7" } }
     element.add { type = "label", caption = { "copper_ore.text8" } }
     element.add { type = "label", caption = { "copper_ore.text9" } }
     element.add { type = "label", caption = { "copper_ore.text10" } }
     element.add { type = "label", caption = { "copper_ore.text11" } }
-  end
+    element.add { type = "label", caption = { "copper_ore.text12" } }
+    element.add { type = "label", caption = { "copper_ore.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "copper_ore.text13" } }
+    element.add { type = "label", caption = { "copper_ore.text14" } }
+    element.add { type = "label", caption = { "copper_ore.text15" } }
+    element.add { type = "label", caption = { "copper_ore.text16" } }
+    element.add { type = "label", caption = { "copper_ore.text17" } }
+    element.add { type = "label", caption = { "copper_ore.label3" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "copper_ore.text18" } }
+    element.add { type = "label", caption = { "copper_ore.text19" } }
+    element.add { type = "label", caption = { "copper_ore.text20" } }
+    element.add { type = "label", caption = { "copper_ore.text21" } }
+    element.add { type = "label", caption = { "copper_ore.text22" } }
+    element.add { type = "label", caption = { "copper_ore.label4" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "copper_ore.text23" } }
+    element.add { type = "label", caption = { "copper_ore.text24" } }
+    element.add { type = "label", caption = { "copper_ore.text25" } }
+    element.add { type = "label", caption = { "copper_ore.text26" } }
+    element.add { type = "label", caption = { "copper_ore.text27" } }
+    element.add { type = "label", caption = { "copper_ore.text28" } }
+    element.add { type = "label", caption = { "copper_ore.text29" } }
+    element.add { type = "label", caption = { "copper_ore.label5" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "copper_ore.text30" } }
+    element.add { type = "label", caption = { "copper_ore.text31" } }
+    element.add { type = "label", caption = { "copper_ore.text32" } }
+    element.add { type = "label", caption = { "copper_ore.text33" } }
+    element.add { type = "label", caption = { "copper_ore.text34" } }
+    element.add { type = "label", caption = { "copper_ore.text35" } }
+    element.add { type = "label", caption = { "copper_ore.text36" } }
+    element.add { type = "label", caption = { "copper_ore.label6" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "copper_ore.text37" } }
+    element.add { type = "label", caption = { "copper_ore.text38" } }
+    element.add { type = "label", caption = { "copper_ore.text39" } }
+    element.add { type = "label", caption = { "copper_ore.text40" } }
+    element.add { type = "label", caption = { "copper_ore.text41" } }
+    element.add { type = "label", caption = { "copper_ore.text42" } }
+    element.add { type = "label", caption = { "copper_ore.text43" } }
+    element.add { type = "label", caption = { "copper_ore.text44" } }
+    element.add { type = "label", caption = { "copper_ore.text45" } }
+    element.add { type = "label", caption = { "copper_ore.text46" } }
+    element.add { type = "label", caption = { "copper_ore.text47" } }
+    element.add { type = "label", caption = { "copper_ore.label7" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "copper_ore.text48" } }
+    element.add { type = "label", caption = { "copper_ore.text49" } }
+    element.add { type = "label", caption = { "copper_ore.text50" } }
+    element.add { type = "label", caption = { "copper_ore.text51" } }
+    element.add { type = "label", caption = { "copper_ore.text52" } }
+    element.add { type = "label", caption = { "copper_ore.text53" } }
+    element.add { type = "label", caption = { "copper_ore.text54" } }
+    element.add { type = "label", caption = { "copper_ore.label8" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "copper_ore.text55" } }
+    element.add { type = "label", caption = { "copper_ore.text56" } }
+    element.add { type = "label", caption = { "copper_ore.text57" } }
+    element.add { type = "label", caption = { "copper_ore.text58" } }
+    element.add { type = "label", caption = { "copper_ore.text59" } }
+    element.add { type = "label", caption = { "copper_ore.text60" } }
+    element.add { type = "label", caption = { "copper_ore.text61" } }
+    element.add { type = "label", caption = { "copper_ore.text62" } }
+    element.add { type = "label", caption = { "copper_ore.text63" } }
+    element.add { type = "label", caption = { "copper_ore.text64" } }
+    element.add { type = "label", caption = { "copper_ore.text65" } }
+    element.add { type = "label", caption = { "copper_ore.text66" } }
+    element.add { type = "label", caption = { "copper_ore.label9" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "copper_ore.text67" } }
+    element.add { type = "label", caption = { "copper_ore.text68" } }
+    element.add { type = "label", caption = { "copper_ore.text69" } }
+    element.add { type = "label", caption = { "copper_ore.text70" } }
+    element.add { type = "label", caption = { "copper_ore.text71" } }
+    element.add { type = "label", caption = { "copper_ore.text72" } }
+    element.add { type = "label", caption = { "copper_ore.text73" } }
+    element.add { type = "label", caption = { "copper_ore.text74" } }
+    element.add { type = "label", caption = { "copper_ore.text75" } }
+    element.add { type = "label", caption = { "copper_ore.label10" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "copper_ore.text76" } }
+    element.add { type = "label", caption = { "copper_ore.text77" } }
+    element.add { type = "label", caption = { "copper_ore.text78" } }
+    element.add { type = "label", caption = { "copper_ore.text79" } }
+    element.add { type = "label", caption = { "copper_ore.text80" } }
+    element.add { type = "label", caption = { "copper_ore.text81" } }
+    element.add { type = "label", caption = { "copper_ore.text82" } }
+  end  
 
   if page_name == "coal" then
     element.add { type = "label", caption = { "coal.text1" } }
@@ -2051,6 +2316,487 @@ function fabricore_page_content(page_name, player_index, element)
     element.add { type = "label", caption = { "kovarex_enrichment_process.text3" } }
     element.add { type = "label", caption = { "kovarex_enrichment_process.text4" } }
     element.add { type = "label", caption = { "kovarex_enrichment_process.text5" } }
+  end
+  
+  if page_name == "pistol" then
+    element.add { type = "label", caption = { "pistol.text1" } }
+    element.add { type = "label", caption = { "pistol.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "pistol.text2" } }
+    element.add { type = "label", caption = { "pistol.text3" } }
+    element.add { type = "label", caption = { "pistol.text4" } }
+    element.add { type = "label", caption = { "pistol.text5" } }
+    element.add { type = "label", caption = { "pistol.text6" } }
+    element.add { type = "label", caption = { "pistol.text7" } }
+    element.add { type = "label", caption = { "pistol.text8" } }
+    element.add { type = "label", caption = { "pistol.text9" } }
+    element.add { type = "label", caption = { "pistol.text10" } }
+    element.add { type = "label", caption = { "pistol.text11" } }
+    element.add { type = "label", caption = { "pistol.text12" } }
+    element.add { type = "label", caption = { "pistol.text13" } }
+    element.add { type = "label", caption = { "pistol.text14" } }
+    element.add { type = "label", caption = { "pistol.text15" } }
+    element.add { type = "label", caption = { "pistol.text16" } }
+    element.add { type = "label", caption = { "pistol.text17" } }
+    element.add { type = "label", caption = { "pistol.text18" } }
+    element.add { type = "label", caption = { "pistol.text19" } }
+    element.add { type = "label", caption = { "pistol.text20" } }
+    element.add { type = "label", caption = { "pistol.text21" } }
+    element.add { type = "label", caption = { "pistol.text22" } }
+    element.add { type = "label", caption = { "pistol.text23" } }
+    element.add { type = "label", caption = { "pistol.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "pistol.text24" } }
+    element.add { type = "label", caption = { "pistol.text25" } }
+    element.add { type = "label", caption = { "pistol.text26" } }
+    element.add { type = "label", caption = { "pistol.text27" } }
+    element.add { type = "label", caption = { "pistol.text28" } }
+    element.add { type = "label", caption = { "pistol.text29" } }
+    element.add { type = "label", caption = { "pistol.text30" } }
+    element.add { type = "label", caption = { "pistol.text31" } }
+    element.add { type = "label", caption = { "pistol.text32" } }
+    element.add { type = "label", caption = { "pistol.text33" } }
+    element.add { type = "label", caption = { "pistol.text34" } }
+    element.add { type = "label", caption = { "pistol.text35" } }
+    element.add { type = "label", caption = { "pistol.text36" } }
+    element.add { type = "label", caption = { "pistol.text37" } }
+    element.add { type = "label", caption = { "pistol.text38" } }
+    element.add { type = "label", caption = { "pistol.text39" } }
+    element.add { type = "label", caption = { "pistol.text40" } }
+    element.add { type = "label", caption = { "pistol.text41" } }
+    element.add { type = "label", caption = { "pistol.text42" } }
+    element.add { type = "label", caption = { "pistol.text43" } }
+    element.add { type = "label", caption = { "pistol.text44" } }
+    element.add { type = "label", caption = { "pistol.text45" } }
+    element.add { type = "label", caption = { "pistol.text46" } }
+    element.add { type = "label", caption = { "pistol.text47" } }
+    element.add { type = "label", caption = { "pistol.text48" } }
+    element.add { type = "label", caption = { "pistol.text49" } }
+    element.add { type = "label", caption = { "pistol.text50" } }
+    element.add { type = "label", caption = { "pistol.text51" } }
+    element.add { type = "label", caption = { "pistol.text52" } }
+    element.add { type = "label", caption = { "pistol.text53" } }
+    element.add { type = "label", caption = { "pistol.text54" } }
+    element.add { type = "label", caption = { "pistol.text55" } }
+    element.add { type = "label", caption = { "pistol.text56" } }
+    element.add { type = "label", caption = { "pistol.text57" } }
+    element.add { type = "label", caption = { "pistol.text58" } }
+    element.add { type = "label", caption = { "pistol.text59" } }
+    element.add { type = "label", caption = { "pistol.text60" } }
+  end
+
+  if page_name == "submachine_gun" then
+    element.add { type = "label", caption = { "submachine_gun.text1" } }
+    element.add { type = "label", caption = { "submachine_gun.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "submachine_gun.text2" } }
+    element.add { type = "label", caption = { "submachine_gun.text3" } }
+    element.add { type = "label", caption = { "submachine_gun.text4" } }
+    element.add { type = "label", caption = { "submachine_gun.text5" } }
+    element.add { type = "label", caption = { "submachine_gun.text6" } }
+    element.add { type = "label", caption = { "submachine_gun.text7" } }
+    element.add { type = "label", caption = { "submachine_gun.text8" } }
+    element.add { type = "label", caption = { "submachine_gun.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "submachine_gun.text9" } }
+    element.add { type = "label", caption = { "submachine_gun.text10" } }
+    element.add { type = "label", caption = { "submachine_gun.text11" } }
+    element.add { type = "label", caption = { "submachine_gun.text12" } }
+    element.add { type = "label", caption = { "submachine_gun.text13" } }
+    element.add { type = "label", caption = { "submachine_gun.text14" } }
+    element.add { type = "label", caption = { "submachine_gun.text15" } }
+    element.add { type = "label", caption = { "submachine_gun.text16" } }
+    element.add { type = "label", caption = { "submachine_gun.text17" } }
+    element.add { type = "label", caption = { "submachine_gun.text18" } }
+    element.add { type = "label", caption = { "submachine_gun.text19" } }
+    element.add { type = "label", caption = { "submachine_gun.text20" } }
+    element.add { type = "label", caption = { "submachine_gun.text21" } }
+    element.add { type = "label", caption = { "submachine_gun.text22" } }
+    element.add { type = "label", caption = { "submachine_gun.text23" } }
+    element.add { type = "label", caption = { "submachine_gun.text24" } }
+    element.add { type = "label", caption = { "submachine_gun.text25" } }
+    element.add { type = "label", caption = { "submachine_gun.text26" } }
+    element.add { type = "label", caption = { "submachine_gun.text27" } }
+    element.add { type = "label", caption = { "submachine_gun.text28" } }
+    element.add { type = "label", caption = { "submachine_gun.text29" } }
+    element.add { type = "label", caption = { "submachine_gun.text30" } }
+    element.add { type = "label", caption = { "submachine_gun.text31" } }
+    element.add { type = "label", caption = { "submachine_gun.text32" } }
+    element.add { type = "label", caption = { "submachine_gun.text33" } }
+    element.add { type = "label", caption = { "submachine_gun.text34" } }
+    element.add { type = "label", caption = { "submachine_gun.text35" } }
+    element.add { type = "label", caption = { "submachine_gun.text36" } }
+    element.add { type = "label", caption = { "submachine_gun.text37" } }
+    element.add { type = "label", caption = { "submachine_gun.text38" } }
+  end
+
+  if page_name == "shotgun" then
+    element.add { type = "label", caption = { "shotgun.text1" } }
+    element.add { type = "label", caption = { "shotgun.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "shotgun.text2" } }
+    element.add { type = "label", caption = { "shotgun.text3" } }
+    element.add { type = "label", caption = { "shotgun.text4" } }
+    element.add { type = "label", caption = { "shotgun.text5" } }
+    element.add { type = "label", caption = { "shotgun.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "shotgun.text6" } }
+    element.add { type = "label", caption = { "shotgun.text7" } }
+    element.add { type = "label", caption = { "shotgun.text8" } }
+    element.add { type = "label", caption = { "shotgun.text9" } }
+    element.add { type = "label", caption = { "shotgun.text10" } }
+    element.add { type = "label", caption = { "shotgun.text11" } }
+    element.add { type = "label", caption = { "shotgun.text12" } }
+    element.add { type = "label", caption = { "shotgun.text13" } }
+    element.add { type = "label", caption = { "shotgun.text14" } }
+    element.add { type = "label", caption = { "shotgun.text15" } }
+    element.add { type = "label", caption = { "shotgun.text16" } }
+    element.add { type = "label", caption = { "shotgun.label3" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "shotgun.text17" } }
+    element.add { type = "label", caption = { "shotgun.text18" } }
+    element.add { type = "label", caption = { "shotgun.text19" } }
+    element.add { type = "label", caption = { "shotgun.text20" } }
+    element.add { type = "label", caption = { "shotgun.text21" } }
+    element.add { type = "label", caption = { "shotgun.text22" } }
+    element.add { type = "label", caption = { "shotgun.text23" } }
+    element.add { type = "label", caption = { "shotgun.text24" } }
+    element.add { type = "label", caption = { "shotgun.text25" } }
+    element.add { type = "label", caption = { "shotgun.text26" } }
+    element.add { type = "label", caption = { "shotgun.text27" } }
+    element.add { type = "label", caption = { "shotgun.text28" } }
+    element.add { type = "label", caption = { "shotgun.text29" } }
+    element.add { type = "label", caption = { "shotgun.text30" } }
+    element.add { type = "label", caption = { "shotgun.text31" } }
+    element.add { type = "label", caption = { "shotgun.text32" } }
+    element.add { type = "label", caption = { "shotgun.text33" } }
+    element.add { type = "label", caption = { "shotgun.text34" } }
+    element.add { type = "label", caption = { "shotgun.text35" } }
+    element.add { type = "label", caption = { "shotgun.text36" } }
+    element.add { type = "label", caption = { "shotgun.text37" } }
+    element.add { type = "label", caption = { "shotgun.text38" } }
+  end
+  
+  if page_name == "rocket_launcher" then
+    element.add { type = "label", caption = { "rocket_launcher.text1" } }
+    element.add { type = "label", caption = { "rocket_launcher.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "rocket_launcher.text2" } }
+    element.add { type = "label", caption = { "rocket_launcher.text3" } }
+    element.add { type = "label", caption = { "rocket_launcher.text4" } }
+    element.add { type = "label", caption = { "rocket_launcher.text5" } }
+    element.add { type = "label", caption = { "rocket_launcher.text6" } }
+    element.add { type = "label", caption = { "rocket_launcher.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "rocket_launcher.text7" } }
+    element.add { type = "label", caption = { "rocket_launcher.text8" } }
+    element.add { type = "label", caption = { "rocket_launcher.text9" } }
+    element.add { type = "label", caption = { "rocket_launcher.text10" } }
+    element.add { type = "label", caption = { "rocket_launcher.text11" } }
+    element.add { type = "label", caption = { "rocket_launcher.text12" } }
+    element.add { type = "label", caption = { "rocket_launcher.text13" } }
+    element.add { type = "label", caption = { "rocket_launcher.text14" } }
+    element.add { type = "label", caption = { "rocket_launcher.text15" } }
+    element.add { type = "label", caption = { "rocket_launcher.text16" } }
+    element.add { type = "label", caption = { "rocket_launcher.text17" } }
+    element.add { type = "label", caption = { "rocket_launcher.text18" } }
+    element.add { type = "label", caption = { "rocket_launcher.text19" } }
+    element.add { type = "label", caption = { "rocket_launcher.text20" } }
+    element.add { type = "label", caption = { "rocket_launcher.text21" } }
+    element.add { type = "label", caption = { "rocket_launcher.text22" } }
+    element.add { type = "label", caption = { "rocket_launcher.text23" } }
+    element.add { type = "label", caption = { "rocket_launcher.text24" } }
+    element.add { type = "label", caption = { "rocket_launcher.text25" } }
+    element.add { type = "label", caption = { "rocket_launcher.text26" } }
+    element.add { type = "label", caption = { "rocket_launcher.text27" } }
+    element.add { type = "label", caption = { "rocket_launcher.text28" } }
+    element.add { type = "label", caption = { "rocket_launcher.text29" } }
+    element.add { type = "label", caption = { "rocket_launcher.text30" } }
+    element.add { type = "label", caption = { "rocket_launcher.text31" } }
+    element.add { type = "label", caption = { "rocket_launcher.text32" } }
+    element.add { type = "label", caption = { "rocket_launcher.text33" } }
+    element.add { type = "label", caption = { "rocket_launcher.text34" } }
+    element.add { type = "label", caption = { "rocket_launcher.text35" } }
+    element.add { type = "label", caption = { "rocket_launcher.text36" } }
+    element.add { type = "label", caption = { "rocket_launcher.text37" } }
+    element.add { type = "label", caption = { "rocket_launcher.text38" } }
+    element.add { type = "label", caption = { "rocket_launcher.text39" } }
+  end
+  
+  if page_name == "flamethrower" then
+    element.add { type = "label", caption = { "flamethrower.text1" } }
+    element.add { type = "label", caption = { "flamethrower.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "flamethrower.text2" } }
+    element.add { type = "label", caption = { "flamethrower.text3" } }
+    element.add { type = "label", caption = { "flamethrower.text4" } }
+    element.add { type = "label", caption = { "flamethrower.text5" } }
+    element.add { type = "label", caption = { "flamethrower.text6" } }
+    element.add { type = "label", caption = { "flamethrower.text7" } }
+    element.add { type = "label", caption = { "flamethrower.text8" } }
+    element.add { type = "label", caption = { "flamethrower.text9" } }
+    element.add { type = "label", caption = { "flamethrower.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "flamethrower.text10" } }
+    element.add { type = "label", caption = { "flamethrower.text11" } }
+    element.add { type = "label", caption = { "flamethrower.text12" } }
+    element.add { type = "label", caption = { "flamethrower.text13" } }
+  end
+  
+  if page_name == "land_mine" then
+    element.add { type = "label", caption = { "land_mine.text1" } }
+    element.add { type = "label", caption = { "land_mine.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "land_mine.text2" } }
+    element.add { type = "label", caption = { "land_mine.text3" } }
+    element.add { type = "label", caption = { "land_mine.text4" } }
+    element.add { type = "label", caption = { "land_mine.text5" } }
+    element.add { type = "label", caption = { "land_mine.text6" } }
+    element.add { type = "label", caption = { "land_mine.text7" } }
+    element.add { type = "label", caption = { "land_mine.text8" } }
+    element.add { type = "label", caption = { "land_mine.text9" } }
+    element.add { type = "label", caption = { "land_mine.text10" } }
+    element.add { type = "label", caption = { "land_mine.text11" } }
+    element.add { type = "label", caption = { "land_mine.text12" } }
+    element.add { type = "label", caption = { "land_mine.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "land_mine.text13" } }
+    element.add { type = "label", caption = { "land_mine.text14" } }
+    element.add { type = "label", caption = { "land_mine.text15" } }
+    element.add { type = "label", caption = { "land_mine.text16" } }
+  end
+  
+  if page_name == "pistol_ammo" then
+    element.add { type = "label", caption = { "pistol_ammo.text1" } }
+    element.add { type = "label", caption = { "pistol_ammo.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "pistol_ammo.text2" } }
+    element.add { type = "label", caption = { "pistol_ammo.text3" } }
+    element.add { type = "label", caption = { "pistol_ammo.text4" } }
+    element.add { type = "label", caption = { "pistol_ammo.text5" } }
+    element.add { type = "label", caption = { "pistol_ammo.text6" } }
+    element.add { type = "label", caption = { "pistol_ammo.text7" } }
+    element.add { type = "label", caption = { "pistol_ammo.text8" } }
+    element.add { type = "label", caption = { "pistol_ammo.text9" } }
+    element.add { type = "label", caption = { "pistol_ammo.text10" } }
+    element.add { type = "label", caption = { "pistol_ammo.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "pistol_ammo.text11" } }
+    element.add { type = "label", caption = { "pistol_ammo.text12" } }
+    element.add { type = "label", caption = { "pistol_ammo.text13" } }
+    element.add { type = "label", caption = { "pistol_ammo.text14" } }
+    element.add { type = "label", caption = { "pistol_ammo.label3" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "pistol_ammo.text15" } }
+    element.add { type = "label", caption = { "pistol_ammo.text16" } }
+    element.add { type = "label", caption = { "pistol_ammo.text17" } }
+    element.add { type = "label", caption = { "pistol_ammo.text18" } }
+    element.add { type = "label", caption = { "pistol_ammo.text19" } }
+    element.add { type = "label", caption = { "pistol_ammo.text20" } }
+    element.add { type = "label", caption = { "pistol_ammo.text21" } }
+    element.add { type = "label", caption = { "pistol_ammo.text22" } }
+    element.add { type = "label", caption = { "pistol_ammo.label4" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "pistol_ammo.text23" } }
+    element.add { type = "label", caption = { "pistol_ammo.text24" } }
+    element.add { type = "label", caption = { "pistol_ammo.text25" } }
+    element.add { type = "label", caption = { "pistol_ammo.text26" } }
+    element.add { type = "label", caption = { "pistol_ammo.text27" } }
+    element.add { type = "label", caption = { "pistol_ammo.text28" } }
+    element.add { type = "label", caption = { "pistol_ammo.label5" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "pistol_ammo.text29" } }
+    element.add { type = "label", caption = { "pistol_ammo.text30" } }
+    element.add { type = "label", caption = { "pistol_ammo.text31" } }
+    element.add { type = "label", caption = { "pistol_ammo.text32" } }
+    element.add { type = "label", caption = { "pistol_ammo.text33" } }
+    element.add { type = "label", caption = { "pistol_ammo.text34" } }
+    element.add { type = "label", caption = { "pistol_ammo.text35" } }
+    element.add { type = "label", caption = { "pistol_ammo.text36" } }
+  end
+  
+  if page_name == "shotgun_shell" then
+    element.add { type = "label", caption = { "shotgun_shell.text1" } }
+    element.add { type = "label", caption = { "shotgun_shell.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "shotgun_shell.text2" } }
+    element.add { type = "label", caption = { "shotgun_shell.text3" } }
+    element.add { type = "label", caption = { "shotgun_shell.text4" } }
+    element.add { type = "label", caption = { "shotgun_shell.text5" } }
+    element.add { type = "label", caption = { "shotgun_shell.text6" } }
+    element.add { type = "label", caption = { "shotgun_shell.text7" } }
+    element.add { type = "label", caption = { "shotgun_shell.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "shotgun_shell.text8" } }
+    element.add { type = "label", caption = { "shotgun_shell.text9" } }
+    element.add { type = "label", caption = { "shotgun_shell.text10" } }
+    element.add { type = "label", caption = { "shotgun_shell.text11" } }
+    element.add { type = "label", caption = { "shotgun_shell.text12" } }
+    element.add { type = "label", caption = { "shotgun_shell.text13" } }
+    element.add { type = "label", caption = { "shotgun_shell.text14" } }
+    element.add { type = "label", caption = { "shotgun_shell.text15" } }
+  end
+  
+  if page_name == "tank_shell" then
+    element.add { type = "label", caption = { "tank_shell.text1" } }
+    element.add { type = "label", caption = { "tank_shell.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "tank_shell.text2" } }
+    element.add { type = "label", caption = { "tank_shell.text3" } }
+    element.add { type = "label", caption = { "tank_shell.text4" } }
+    element.add { type = "label", caption = { "tank_shell.text5" } }
+    element.add { type = "label", caption = { "tank_shell.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "tank_shell.text6" } }
+    element.add { type = "label", caption = { "tank_shell.text7" } }
+    element.add { type = "label", caption = { "tank_shell.text8" } }
+    element.add { type = "label", caption = { "tank_shell.text9" } }
+    element.add { type = "label", caption = { "tank_shell.text10" } }
+    element.add { type = "label", caption = { "tank_shell.text11" } }
+    element.add { type = "label", caption = { "tank_shell.text12" } }
+    element.add { type = "label", caption = { "tank_shell.text13" } }
+    element.add { type = "label", caption = { "tank_shell.text14" } }
+    element.add { type = "label", caption = { "tank_shell.label3" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "tank_shell.text15" } }
+    element.add { type = "label", caption = { "tank_shell.text16" } }
+    element.add { type = "label", caption = { "tank_shell.text17" } }
+    element.add { type = "label", caption = { "tank_shell.text18" } }
+    element.add { type = "label", caption = { "tank_shell.text19" } }
+    element.add { type = "label", caption = { "tank_shell.text20" } }
+    element.add { type = "label", caption = { "tank_shell.text21" } }
+  end
+  
+  if page_name == "artillery_shell" then
+    element.add { type = "label", caption = { "artillery_shell.text1" } }
+    element.add { type = "label", caption = { "artillery_shell.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "artillery_shell.text2" } }
+    element.add { type = "label", caption = { "artillery_shell.text3" } }
+    element.add { type = "label", caption = { "artillery_shell.text4" } }
+    element.add { type = "label", caption = { "artillery_shell.text5" } }
+    element.add { type = "label", caption = { "artillery_shell.text6" } }
+    element.add { type = "label", caption = { "artillery_shell.text7" } }
+    element.add { type = "label", caption = { "artillery_shell.text8" } }
+    element.add { type = "label", caption = { "artillery_shell.text9" } }
+    element.add { type = "label", caption = { "artillery_shell.text10" } }
+    element.add { type = "label", caption = { "artillery_shell.text11" } }
+    element.add { type = "label", caption = { "artillery_shell.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "artillery_shell.text12" } }
+    element.add { type = "label", caption = { "artillery_shell.text13" } }
+    element.add { type = "label", caption = { "artillery_shell.text14" } }
+    element.add { type = "label", caption = { "artillery_shell.text15" } }
+    element.add { type = "label", caption = { "artillery_shell.text16" } }
+    element.add { type = "label", caption = { "artillery_shell.text17" } }
+    element.add { type = "label", caption = { "artillery_shell.text18" } }
+    element.add { type = "label", caption = { "artillery_shell.text19" } }
+    element.add { type = "label", caption = { "artillery_shell.text20" } }
+    element.add { type = "label", caption = { "artillery_shell.text21" } }
+  end
+  
+  if page_name == "grenade" then
+    element.add { type = "label", caption = { "grenade.text1" } }
+    element.add { type = "label", caption = { "grenade.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "grenade.text2" } }
+    element.add { type = "label", caption = { "grenade.text3" } }
+    element.add { type = "label", caption = { "grenade.text4" } }
+    element.add { type = "label", caption = { "grenade.text5" } }
+    element.add { type = "label", caption = { "grenade.text6" } }
+    element.add { type = "label", caption = { "grenade.text7" } }
+    element.add { type = "label", caption = { "grenade.text8" } }
+    element.add { type = "label", caption = { "grenade.text9" } }
+    element.add { type = "label", caption = { "grenade.text10" } }
+    element.add { type = "label", caption = { "grenade.text11" } }
+    element.add { type = "label", caption = { "grenade.text12" } }
+    element.add { type = "label", caption = { "grenade.text13" } }
+    element.add { type = "label", caption = { "grenade.text14" } }
+    element.add { type = "label", caption = { "grenade.text15" } }
+    element.add { type = "label", caption = { "grenade.text16" } }
+    element.add { type = "label", caption = { "grenade.text17" } }
+    element.add { type = "label", caption = { "grenade.text18" } }
+    element.add { type = "label", caption = { "grenade.text19" } }
+    element.add { type = "label", caption = { "grenade.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "grenade.text20" } }
+    element.add { type = "label", caption = { "grenade.text21" } }
+    element.add { type = "label", caption = { "grenade.text22" } }
+    element.add { type = "label", caption = { "grenade.text23" } }
+    element.add { type = "label", caption = { "grenade.text24" } }
+    element.add { type = "label", caption = { "grenade.text25" } }
+    element.add { type = "label", caption = { "grenade.text26" } }
+    element.add { type = "label", caption = { "grenade.text27" } }
+  end
+  
+  if page_name == "nightvision" then
+    element.add { type = "label", caption = { "nightvision.text1" } }
+    element.add { type = "label", caption = { "nightvision.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "nightvision.text2" } }
+    element.add { type = "label", caption = { "nightvision.text3" } }
+    element.add { type = "label", caption = { "nightvision.text4" } }
+    element.add { type = "label", caption = { "nightvision.text5" } }
+    element.add { type = "label", caption = { "nightvision.text6" } }
+    element.add { type = "label", caption = { "nightvision.text7" } }
+    element.add { type = "label", caption = { "nightvision.text8" } }
+    element.add { type = "label", caption = { "nightvision.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "nightvision.text9" } }
+    element.add { type = "label", caption = { "nightvision.text10" } }
+    element.add { type = "label", caption = { "nightvision.text11" } }
+    element.add { type = "label", caption = { "nightvision.text12" } }
+    element.add { type = "label", caption = { "nightvision.text13" } }
+    element.add { type = "label", caption = { "nightvision.text14" } }
+    element.add { type = "label", caption = { "nightvision.text15" } }
+    element.add { type = "label", caption = { "nightvision.text16" } }
+    element.add { type = "label", caption = { "nightvision.text17" } }
+    element.add { type = "label", caption = { "nightvision.text18" } }
+    element.add { type = "label", caption = { "nightvision.label3" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "nightvision.text19" } }
+    element.add { type = "label", caption = { "nightvision.text20" } }
+    element.add { type = "label", caption = { "nightvision.text21" } }
+    element.add { type = "label", caption = { "nightvision.text22" } }
+    element.add { type = "label", caption = { "nightvision.text23" } }
+    element.add { type = "label", caption = { "nightvision.text24" } }
+    element.add { type = "label", caption = { "nightvision.text25" } }
+    element.add { type = "label", caption = { "nightvision.text26" } }
+    element.add { type = "label", caption = { "nightvision.text27" } }
+    element.add { type = "label", caption = { "nightvision.text28" } }
+  end
+  
+  if page_name == "radar" then
+    element.add { type = "label", caption = { "radar.text1" } }
+    element.add { type = "label", caption = { "radar.label1" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "radar.text2" } }
+    element.add { type = "label", caption = { "radar.text3" } }
+    element.add { type = "label", caption = { "radar.text4" } }
+    element.add { type = "label", caption = { "radar.text5" } }
+    element.add { type = "label", caption = { "radar.text6" } }
+    element.add { type = "label", caption = { "radar.text7" } }
+    element.add { type = "label", caption = { "radar.text8" } }
+    element.add { type = "label", caption = { "radar.label2" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "radar.text9" } }
+    element.add { type = "label", caption = { "radar.text10" } }
+    element.add { type = "label", caption = { "radar.text11" } }
+    element.add { type = "label", caption = { "radar.text12" } }
+    element.add { type = "label", caption = { "radar.text13" } }
+    element.add { type = "label", caption = { "radar.text14" } }
+    element.add { type = "label", caption = { "radar.text15" } }
+    element.add { type = "label", caption = { "radar.text16" } }
+    element.add { type = "label", caption = { "radar.text17" } }
+    element.add { type = "label", caption = { "radar.text18" } }
+    element.add { type = "label", caption = { "radar.text19" } }
+    element.add { type = "label", caption = { "radar.label3" }, style = "heading_1_label" }
+    element.add { type = "label", caption = { "radar.text20" } }
+    element.add { type = "label", caption = { "radar.text21" } }
+    element.add { type = "label", caption = { "radar.text22" } }
+    element.add { type = "label", caption = { "radar.text23" } }
+    element.add { type = "label", caption = { "radar.text24" } }
+    element.add { type = "label", caption = { "radar.text25" } }
+    element.add { type = "label", caption = { "radar.text26" } }
+    element.add { type = "label", caption = { "radar.text27" } }
+    element.add { type = "label", caption = { "radar.text28" } }
+    element.add { type = "label", caption = { "radar.text29" } }
+    element.add { type = "label", caption = { "radar.text30" } }
+    element.add { type = "label", caption = { "radar.text31" } }
+    element.add { type = "label", caption = { "radar.text32" } }
+    element.add { type = "label", caption = { "radar.text33" } }
+    element.add { type = "label", caption = { "radar.text34" } }
+    element.add { type = "label", caption = { "radar.text35" } }
+    element.add { type = "label", caption = { "radar.text36" } }
+    element.add { type = "label", caption = { "radar.text37" } }
+    element.add { type = "label", caption = { "radar.text38" } }
+    element.add { type = "label", caption = { "radar.text39" } }
+    element.add { type = "label", caption = { "radar.text40" } }
+    element.add { type = "label", caption = { "radar.text41" } }
+    element.add { type = "label", caption = { "radar.text42" } }
+    element.add { type = "label", caption = { "radar.text43" } }
+    element.add { type = "label", caption = { "radar.text44" } }
+    element.add { type = "label", caption = { "radar.text45" } }
+    element.add { type = "label", caption = { "radar.text46" } }
+    element.add { type = "label", caption = { "radar.text47" } }
+    element.add { type = "label", caption = { "radar.text48" } }
+    element.add { type = "label", caption = { "radar.text49" } }
+    element.add { type = "label", caption = { "radar.text50" } }
+    element.add { type = "label", caption = { "radar.text51" } }
+    element.add { type = "label", caption = { "radar.text52" } }
+    element.add { type = "label", caption = { "radar.text53" } }
+    element.add { type = "label", caption = { "radar.text54" } }
+    element.add { type = "label", caption = { "radar.text55" } }
+    element.add { type = "label", caption = { "radar.text56" } }
+    element.add { type = "label", caption = { "radar.text57" } }
   end
   
 end

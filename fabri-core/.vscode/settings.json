@@ -12,5 +12,8 @@
     "Lua.workspace.userThirdParty": [
         "c:\\Users\\John\\AppData\\Roaming\\Code\\User\\workspaceStorage\\2e2a65d8866a2c667743ca675c488def\\justarandomgeek.factoriomod-debug\\sumneko-3rd"
     ],
-    "Lua.workspace.checkThirdParty": "ApplyInMemory"
+    "Lua.workspace.checkThirdParty": "ApplyInMemory",
+    "Lua.diagnostics.disable": [
+        "trailing-space"
+    ]
 }

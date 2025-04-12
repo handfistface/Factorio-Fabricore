@@ -15,3 +15,6 @@ On my local system it is `C:\Users\John\AppData\Roaming\Factorio\mods`
 1. Compile the Fabricore.Generator project
 1. Make sure each line has a text or label at the beginning of it, an example would be "text3=" or "label1="
 1. Run the command `./Fabricore.Generator/Fabricore.Generator.Console/bin/Debug/net8.0/Fabricore.Generator.Console.exe reorder C:\Users\John\AppData\Roaming\Factorio\mods\fabri-core\locale\en\fabricore.cfg iron_ore`
+
+# Creating a release
+1. Run the ZipRelease.ps1 script, pass a parameter indicating the version you want. `./ZipRelease.ps1 2.0`

@@ -1,12 +1,12 @@
 {
     "name": "fabri-core",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "title": "Fabri Core",
     "author": "John Kirschner",
-    "factorio_version": "1.1",
+    "factorio_version": "2.0",
     "dependencies": [
-        "base >= 1.1",
-        "informatron >= 0.3.4"
+        "base >= 2.0",
+        "informatron >= 0.4.0"
     ],
-    "description": "This mod attempts to document some of the actual refination process behind items being fabricated."
+    "description": "This mod attempts to document some of the actual refining processes behind items being fabricated."
 }
